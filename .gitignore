@@ -1,6 +1,0 @@
-# ignore all auto-generated stuff
-*
-
-# only include relevant configs
-!i3/
-!nvim/
