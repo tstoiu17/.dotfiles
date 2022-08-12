@@ -27,7 +27,7 @@ nmap("<C-k>", ":wincmd k<CR>")
 nmap("<C-l>", ":wincmd l<CR>")
 
 -- New tab
-nmap('te', ':tabedit')
+nmap('te', ':tabedit<CR>')
 
 -- Split window
 nmap('ss', ':split<Return><C-w>w')

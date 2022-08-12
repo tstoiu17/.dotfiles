@@ -1,7 +1,7 @@
 return require("packer").startup(function()
     use "wbthomason/packer.nvim"    
 
-    -- Section Title
+    -- telescope will go here
 
     -- Themes
     use "folke/tokyonight.nvim" 
