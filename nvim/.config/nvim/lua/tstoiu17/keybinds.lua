@@ -18,6 +18,11 @@ local function imap(lhs, rhs)
     map("i", lhs, rhs)
 end
 
+-- SETTINGS
+nmap("<leader>,", ":tabedit ~/.dotfiles/nvim/.config/nvim/lua/tstoiu17/<CR>")
+-- source file
+nmap("<leader>r", ":source ~/.dotfiles/nvim/.config/nvim/init.lua<CR>")
+
 -- MOVEMENTS
 
 -- move between splits
@@ -44,6 +49,10 @@ nmap('sl', '<C-w>l')
 nmap("<leader>e", ":Ex<CR>")
 
 -- EDITING
+
+-- don't save deletions made with "x"
+nmap("x", '"_x')
+vmap("x", '"_x')
 
 -- increment/decrement
 nmap("+", "<C-a>")
