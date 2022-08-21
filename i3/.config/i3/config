@@ -227,10 +227,16 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 25%- &
 default_border pixel 4
 default_floating_border pixel 4
 
+# workspaces on secondary monitor
+workspace 2 output HDMI-A-0 
+workspace 9 output HDMI-A-0 
+
 # workspace 1 always on laptop
 workspace 1 output eDP
-# workspace 2 always on secondary
-workspace 2 output HDMI-A-0 
+workspace 3 output eDP
+workspace 4 output eDP
+workspace 10 output eDP
 
 # Multi monitor relative positioning
 #exec --no-startup-id xrandr --output HDMI-A-0 --above eDP &
+focus_follows_mouse no
