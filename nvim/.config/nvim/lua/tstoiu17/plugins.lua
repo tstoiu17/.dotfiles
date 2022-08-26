@@ -5,6 +5,4 @@ return require("packer").startup(function()
 
     -- Themes
     use "folke/tokyonight.nvim" 
-    use "gruvbox-community/gruvbox"
-    use 'rockerBOO/boo-colorscheme-nvim'
 end)
