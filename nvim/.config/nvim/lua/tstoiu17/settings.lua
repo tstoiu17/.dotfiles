@@ -22,6 +22,7 @@ vim.opt.backup = false
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
+-- enable true color
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
