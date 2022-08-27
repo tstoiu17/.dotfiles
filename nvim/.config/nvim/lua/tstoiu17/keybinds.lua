@@ -59,6 +59,11 @@ nmap("+", "<C-a>")
 vmap("+", "<C-a>")
 nmap("-", "<C-x>")
 vmap("-", "<C-x>")
+-- power of g
+nmap("g+", "g<C-a>")
+vmap("g+", "g<C-a>")
+nmap("g-", "g<C-x>")
+vmap("g-", "g<C-x>")
 
 -- yanking
 nmap("Y", "y$")
