@@ -38,15 +38,22 @@ nmap('te', ':tabedit<CR>')
 nmap('ss', ':split<Return><C-w>w')
 nmap('sv', ':vsplit<Return><C-w>w')
 
--- Move window
+-- Switch window
 nmap('sh', '<C-w>h')
 nmap('sk', '<C-w>k')
 nmap('sj', '<C-w>j')
 nmap('sl', '<C-w>l')
 
+-- Move window
+nmap('sH', '<C-w>H')
+nmap('sK', '<C-w>K')
+nmap('sJ', '<C-w>J')
+nmap('sL', '<C-w>L')
+
 -- ACTIONS
 
 nmap("<leader>e", ":Ex<CR>")
+nmap("<leader>w", ":w<CR>")
 
 -- EDITING
 
