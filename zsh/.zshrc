@@ -89,7 +89,7 @@ source $ZSH/oh-my-zsh.sh
 # fi
 #
 
-export EDITOR='nvim'
+export EDITOR='/home/tudor/.local/bin/lvim'
 
 alias ls="exa"
 alias ll="ls -l"
