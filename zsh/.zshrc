@@ -148,3 +148,4 @@ alias v="/home/tudor/.local/bin/lvim"
 #alias x=
 #alias y=
 #alias z=
+alias ts="tmux-sessionizer"
