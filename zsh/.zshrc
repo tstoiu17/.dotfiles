@@ -115,7 +115,7 @@ alias lg="lazygit"
 alias ta="tmux attach"
 alias dot="cd ~/.dotfiles"
 alias cm="cmatrix"
-alias ab="~/scripts/monitor_above"
+alias ab="monitor_above"
 alias down="cd ~/Downloads/"
 
 # single letter aliases
