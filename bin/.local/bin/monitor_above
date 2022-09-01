@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+# position secondary monitor (HDMI-A-0) above 
+# laptop (eDP)
+
+xrandr --output HDMI-A-0 --above eDP &
