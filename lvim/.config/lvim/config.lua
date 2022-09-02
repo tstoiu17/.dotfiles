@@ -16,7 +16,7 @@ lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "tokyonight"
 -- to disable icons and use a minimalist setup, uncomment the following
-lvim.use_icons = false
+-- lvim.use_icons = false
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -180,10 +180,10 @@ formatters.setup {
 -- Additional Plugins
 lvim.plugins = {
   { "folke/tokyonight.nvim" },
-  -- {
-  --   "folke/trouble.nvim",
-  --   cmd = "TroubleToggle",
-  -- },
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
@@ -192,10 +192,10 @@ lvim.plugins = {
 --   -- enable wrap mode for json files only
 --   command = "setlocal wrap",
 -- })
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = "zsh",
---   callback = function()
---     -- let treesitter use bash highlight for zsh files as well
---     require("nvim-treesitter.highlight").attach(0, "bash")
---   end,
--- })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "zsh",
+  callback = function()
+    -- let treesitter use bash highlight for zsh files as well
+    require("nvim-treesitter.highlight").attach(0, "bash")
+  end,
+})
