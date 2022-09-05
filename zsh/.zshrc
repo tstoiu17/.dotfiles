@@ -120,7 +120,7 @@ alias down="cd ~/Downloads/"
 
 # single letter aliases
 alias a="v ~/.zshrc; exec zsh"
-#alias b=
+alias b="sudo brightnessctl i"
 alias c="clear"
 #alias d=
 alias e="exit"
