@@ -22,7 +22,6 @@ lvim.colorscheme = "tokyonight"
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-lvim.keys.normal_mode["<leader>e"] = ":NvimTreeFocus<cr>"
 -- switch window
 lvim.keys.normal_mode["ss"] = ":wincmd s<cr>"
 lvim.keys.normal_mode["sv"] = ":wincmd v<cr>"
