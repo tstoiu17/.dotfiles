@@ -233,8 +233,8 @@ bindsym $mod+Shift+s exec --no-startup-id maim --select | xclip -selection clipb
 # Sreen brightness controls
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 #bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 25%+ &
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 25%- &
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set +25% &
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q set 25%- &
 
 # disable window title
 default_border pixel 4
