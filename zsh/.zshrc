@@ -150,3 +150,4 @@ alias v="/home/tudor/.local/bin/lvim"
 #alias z=
 alias ts="tmux-sessionizer"
 alias grvw="gh repo view --web" # repo web view
+alias repos="cd ~/repos"
