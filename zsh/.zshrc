@@ -97,6 +97,7 @@ alias py="python3"
 alias wm="v ~/.config/i3/config"
 alias wms="v ~/.config/i3/i3status/config"
 alias nf="neofetch"
+alias ff="firefox"
 alias anime="ani-cli -q best -f" # best quality and use fzf for search results
 alias cat="batcat"
 alias cx="chmod +x"
@@ -112,7 +113,6 @@ alias rmrf="rm -rf"
 
 alias lg="lazygit"
 
-alias ta="tmux attach"
 alias dot="cd ~/.dotfiles"
 alias cm="cmatrix"
 alias ab="monitor_above"
@@ -148,8 +148,17 @@ alias v="/home/tudor/.local/bin/lvim"
 #alias x=
 #alias y=
 #alias z=
-alias ts="tmux-sessionizer"
-alias grvw="gh repo view --web" # repo web view
+
 alias repos="cd ~/repos"
-alias tn="tmux new -s $(pwd | sed 's/.*\///g')" # make a new tmux session in the current dir
 alias dl="cd ~/Downloads/"
+alias grvw="gh repo view --web" # repo web view
+alias va=". venv/bin/activate"
+
+########## TMUX ########## 
+
+alias ta="tmux attach -t" # -t requires a name so press TAB to select from active sessions
+alias tk="tmux kill-session -t" # -t requires a name so press TAB to select from active sessions
+alias ts="tmux-sessionizer"
+alias tn="tmux new -s $(pwd | sed 's/.*\///g')" # make a new tmux session in the current dir
+
+eval "$(starship init zsh)"

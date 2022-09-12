@@ -8,12 +8,13 @@ an executable
 ]]
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 vim.opt.relativenumber = true
+vim.opt.ruler = true
 vim.opt.list = true
 vim.opt.listchars:append('eol:↵')
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = true
+lvim.format_on_save = false
 lvim.colorscheme = "tokyonight"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
@@ -21,6 +22,7 @@ lvim.colorscheme = "tokyonight"
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
+lvim.keys.normal_mode["<leader>e"] = ":NvimTreeFocus<cr>"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- switch window
 lvim.keys.normal_mode["ss"] = ":wincmd s<cr>"

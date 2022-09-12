@@ -17,10 +17,7 @@ font:
 
 key_bindings:
   ########## TMUX KEYBINDS ##########
-  # Rename the current tmux window
-  - { key: Comma, mods: Alt, chars: "\x02\x2c" }
-  # Select a new tmux session for the attached client interactively
-  - { key: K, mods: Alt, chars: "\x02\x73" }
+  # source: https://www.joshmedeski.com/posts/macos-keyboard-shortcuts-for-tmux
   # Select window 1-9
   - { key: Key1, mods: Alt, chars: "\x02\x31" }
   - { key: Key2, mods: Alt, chars: "\x02\x32" }
@@ -31,21 +28,19 @@ key_bindings:
   - { key: Key7, mods: Alt, chars: "\x02\x37" }
   - { key: Key8, mods: Alt, chars: "\x02\x38" }
   - { key: Key9, mods: Alt, chars: "\x02\x39" }
-  # Switch to last tmux session
-  - { key: L, mods: Alt, chars: "\x02\x4c" }
-  - { key: LBracket, mods: Alt, chars: "\x02\x5b" }
-  # Change to the previous tmux window
-  - { key: LBracket, mods: Alt|Shift, chars: "\x02\x70" }
-  # Split the current pane into two, left and right
-  - { key: N, mods: Alt|Shift, chars: "\x02\x25" }
-  # Split the current pane into two, top and bottom.
-  - { key: N, mods: Alt, chars: "\x02\x22" }
-  # Detach the current tmux client
-  - { key: Q, mods: Alt, chars: "\x02\x64" }
-  # Change to the next tmux window
-  - { key: RBracket, mods: Alt|Shift, chars: "\x02\x6e" }
-  # Type <escape>:w<enter> to save neovim
-  - { key: S, mods: Alt, chars: "\x1b\x3a\x77\x0a" }
+  # Select a new tmux session for the attached client interactively
+  - { key: S, mods: Alt, chars: "\x02\x73" }
+  # Select a new tmux session for the attached client interactively
+  - { key: Q, mods: Alt|Shift, chars: "\x02\x51" }
+  # Rename the current tmux window
+  - { key: Comma, mods: Alt, chars: "\x02\x2c" }
+  # Split vertically
+  - { key: V, mods: Alt, chars: "\x02\x25" }
+  # move to left pane
+  - { key: H, mods: Alt, chars: "\x02\x68" }
+  - { key: J, mods: Alt, chars: "\x02\x6a" }
+  - { key: K, mods: Alt, chars: "\x02\x6b" }
+  - { key: L, mods: Alt, chars: "\x02\x6c" }
   # Create a new tmux window
   - { key: T, mods: Alt, chars: "\x02\x63" }
   # Break the current tmux pane out of the tmux window
@@ -54,3 +49,5 @@ key_bindings:
   - { key: W, mods: Alt, chars: "\x02\x78" }
   # Toggle the zoom state of the current tmux pane
   - { key: Z, mods: Alt, chars: "\x02\x7a" }
+  # Detach the current tmux client
+  - { key: D, mods: Alt, chars: "\x02\x64" }
