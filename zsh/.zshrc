@@ -153,6 +153,7 @@ alias repos="cd ~/repos"
 alias dl="cd ~/Downloads/"
 alias grvw="gh repo view --web" # repo web view
 alias va=". venv/bin/activate"
+alias da="deactivate"
 
 ########## TMUX ########## 
 
