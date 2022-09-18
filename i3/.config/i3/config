@@ -103,7 +103,7 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+q layout stacking
+bindsym $mod+q layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -248,6 +248,7 @@ workspace $ws3 output HDMI-A-0
 # workspace 1 always on laptop
 workspace $ws1 output eDP
 workspace $ws4 output eDP
+workspace $ws5 output eDP
 workspace $ws10 output eDP
 
 # Multi monitor relative positioning

@@ -51,3 +51,7 @@ key_bindings:
   - { key: Z, mods: Alt, chars: "\x02\x7a" }
   # Detach the current tmux client
   - { key: D, mods: Alt, chars: "\x02\x64" }
+  # open lazygit popup
+  - { key: G, mods: Alt, chars: "\x02\x67" }
+  # open fzf-url
+  - { key: F, mods: Alt, chars: "\x02\x60" }
