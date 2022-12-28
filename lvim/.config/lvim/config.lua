@@ -17,6 +17,8 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
+vim.opt.colorcolumn = "80"
+
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = false
@@ -28,6 +30,7 @@ lvim.colorscheme = "tokyonight"
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<leader>e"] = ":NvimTreeFocus<cr>"
+lvim.keys.normal_mode["<leader>Q"] = ":qa<cr>"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- switch window
 lvim.keys.normal_mode["ss"] = ":wincmd s<cr>"
@@ -42,6 +45,16 @@ lvim.keys.normal_mode["sH"] = ":wincmd H<cr>"
 lvim.keys.normal_mode["sJ"] = ":wincmd J<cr>"
 lvim.keys.normal_mode["sK"] = ":wincmd K<cr>"
 lvim.keys.normal_mode["sL"] = ":wincmd L<cr>"
+-- increment decrement
+lvim.keys.normal_mode["+"] = "<C-a>"
+lvim.keys.visual_mode["+"] = "<C-a>"
+lvim.keys.normal_mode["-"] = "<C-x>"
+lvim.keys.visual_mode["-"] = "<C-x>"
+-- increment decrement with power of g
+lvim.keys.normal_mode["g+"] = "g<C-a>"
+lvim.keys.visual_mode["g+"] = "g<C-a>"
+lvim.keys.normal_mode["g-"] = "g<C-x>"
+lvim.keys.visual_mode["g-"] = "g<C-x>"
 -- bufferline
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
@@ -190,7 +203,36 @@ lvim.plugins = {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   },
+  { "karb94/neoscroll.nvim" },
+  { "folke/zen-mode.nvim",
+    config = function()
+      require("zen-mode").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  },
+  { "lukas-reineke/indent-blankline.nvim" },
+  {
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  }
 }
+
+require('neoscroll').setup({
+    -- All these keys will be mapped to their corresponding default scrolling animation
+    mappings = {'<C-u>', '<C-d>', '<C-b>', '<C-f>',
+                '<C-y>', '<C-e>', 'zt', 'zz', 'zb'},
+    hide_cursor = true,          -- Hide cursor while scrolling
+    stop_eof = true,             -- Stop at <EOF> when scrolling downwards
+    respect_scrolloff = false,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
+    cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
+    easing_function = nil,       -- Default easing function
+    pre_hook = nil,              -- Function to run before the scrolling animation starts
+    post_hook = nil,             -- Function to run after the scrolling animation ends
+    performance_mode = false,    -- Disable "Performance Mode" on all buffers.
+})
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
