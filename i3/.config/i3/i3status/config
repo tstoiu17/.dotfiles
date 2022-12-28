@@ -67,5 +67,5 @@ volume master {
 }
 disk "/" {
         #format = "%avail"
-        format = "[U] %used (%percentage_used) - [A] %avail (%percentage_avail)"
+        format = "%used / %total (%percentage_used)"
 }
