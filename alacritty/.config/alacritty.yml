@@ -1,5 +1,16 @@
+import:
+  # uncomment the flavour you want below:
+  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
+  # - ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
+  # - ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
+  # - ~/.config/alacritty/catppuccin/catppuccin-latte.yml
+
 env:
   TERM: xterm-256color
+
+window:
+  padding:
+    x: 8
 
 font:
   normal:
@@ -16,7 +27,22 @@ font:
     style: Bold Italic
 
 key_bindings:
-  ########## TMUX KEYBINDS ##########
+  #████████╗███╗   ███╗██╗   ██╗██╗  ██╗
+  #╚══██╔══╝████╗ ████║██║   ██║╚██╗██╔╝
+  #   ██║   ██╔████╔██║██║   ██║ ╚███╔╝ 
+  #   ██║   ██║╚██╔╝██║██║   ██║ ██╔██╗ 
+  #   ██║   ██║ ╚═╝ ██║╚██████╔╝██╔╝ ██╗
+  #   ╚═╝   ╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═╝
+
+  #████████╗ ██████╗ ██████╗  ██████╗ 
+  #╚══██╔══╝██╔═══██╗██╔══██╗██╔═══██╗
+  #   ██║   ██║   ██║██║  ██║██║   ██║
+  #   ██║   ██║   ██║██║  ██║██║   ██║
+  #   ██║   ╚██████╔╝██████╔╝╚██████╔╝
+  #   ╚═╝    ╚═════╝ ╚═════╝  ╚═════╝ 
+
+
+  # TODO: redo macros and tmux binds so they use the default tmux shortcut
   # source: https://www.joshmedeski.com/posts/macos-keyboard-shortcuts-for-tmux
   # Select window 1-9
   - { key: Key1, mods: Alt, chars: "\x02\x31" }
@@ -30,7 +56,7 @@ key_bindings:
   - { key: Key9, mods: Alt, chars: "\x02\x39" }
   # Select a new tmux session for the attached client interactively
   - { key: S, mods: Alt, chars: "\x02\x73" }
-  # Select a new tmux session for the attached client interactively
+  # TODO: find out what this is
   - { key: Q, mods: Alt|Shift, chars: "\x02\x51" }
   # Rename the current tmux window
   - { key: Comma, mods: Alt, chars: "\x02\x2c" }
@@ -41,6 +67,9 @@ key_bindings:
   - { key: J, mods: Alt, chars: "\x02\x6a" }
   - { key: K, mods: Alt, chars: "\x02\x6b" }
   - { key: L, mods: Alt, chars: "\x02\x6c" }
+  # move to left and right tabs
+  - { key: H, mods: Alt|Shift, chars: "\x02\x70" }
+  - { key: L, mods: Alt|Shift, chars: "\x02\x6e" }
   # Create a new tmux window
   - { key: T, mods: Alt, chars: "\x02\x63" }
   # Break the current tmux pane out of the tmux window
@@ -54,4 +83,6 @@ key_bindings:
   # open lazygit popup
   - { key: G, mods: Alt, chars: "\x02\x67" }
   # open fzf-url
-  - { key: F, mods: Alt, chars: "\x02\x60" }
+  - { key: F, mods: Alt, chars: "\x02\x66" }
+  # enter tmux copy mode
+  - { key: LBracket, mods: Alt, chars: "\x02\x5b" }
