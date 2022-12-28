@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+# position SFU library secondary monitor (HDMI-A-0) above 
+# laptop (eDP)
+
+xrandr --output HDMI-A-0 --mode 3440x1440 --above eDP &
