@@ -38,6 +38,7 @@ return require("packer").startup(function(use)
             {"rafamadriz/friendly-snippets"},
         }
     }
+    use "folke/neodev.nvim"
     -- Treesitter and friends
     use {
         "nvim-treesitter/nvim-treesitter",
