@@ -56,7 +56,7 @@ key_bindings:
   - { key: Key9, mods: Alt, chars: "\x02\x39" }
   # Select a new tmux session for the attached client interactively
   - { key: S, mods: Alt, chars: "\x02\x73" }
-  # TODO: find out what this is
+  # Quit session
   - { key: Q, mods: Alt|Shift, chars: "\x02\x51" }
   # Rename the current tmux window
   - { key: Comma, mods: Alt, chars: "\x02\x2c" }
@@ -68,8 +68,8 @@ key_bindings:
   - { key: K, mods: Alt, chars: "\x02\x6b" }
   - { key: L, mods: Alt, chars: "\x02\x6c" }
   # move to left and right tabs
-  - { key: H, mods: Alt|Shift, chars: "\x02\x70" }
-  - { key: L, mods: Alt|Shift, chars: "\x02\x6e" }
+  - { key: H, mods: Alt|Shift, chars: "\x02\x48" }
+  - { key: L, mods: Alt|Shift, chars: "\x02\x4c" }
   # Create a new tmux window
   - { key: T, mods: Alt, chars: "\x02\x63" }
   # Break the current tmux pane out of the tmux window
