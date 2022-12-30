@@ -58,6 +58,8 @@ vim.keymap.set("n", 'sq', '<C-w>q')
 -- Resize window
 vim.keymap.set("n", 's>', '<C-w>10>')
 vim.keymap.set("n", 's<', '<C-w>10<')
+vim.keymap.set("n", 's+', '<C-w>5+')
+vim.keymap.set("n", 's-', '<C-w>5-')
 vim.keymap.set("n", 's=', '<C-w>=')
 -- Switch window
 vim.keymap.set("n", 'sh', '<C-w>h')

@@ -1,8 +1,7 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.list = true
-vim.opt.listchars:append("trail:⋅")
-vim.opt.listchars:append('eol:↵')
+vim.opt.listchars:append("eol:↵,trail:⋅")
 
 vim.opt.errorbells = false
 
