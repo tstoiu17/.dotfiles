@@ -80,6 +80,7 @@ return require("packer").startup(function(use)
         "akinsho/bufferline.nvim",
         tag = "v3.*", requires = "nvim-tree/nvim-web-devicons"
     }
+    use "famiu/bufdelete.nvim"
     use {
         "nvim-lualine/lualine.nvim",
         requires = { "kyazdani42/nvim-web-devicons", opt = true }
