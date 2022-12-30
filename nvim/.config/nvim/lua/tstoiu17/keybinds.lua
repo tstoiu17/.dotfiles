@@ -1,81 +1,86 @@
--- REMAP SHORTCUTS
-local function map(mode, lhs, rhs)
-    vim.keymap.set(mode, lhs, rhs, { noremap = true, silent = true })
-end
-
--- NORMAL MODE REMAP CALLER
-local function nmap(lhs, rhs)
-    map("n", lhs, rhs)
-end
-
--- VISUAL MODE REMAP CALLER
-local function vmap(lhs, rhs)
-    map("v", lhs, rhs)
-end
-
--- INSERT MODE REMAP CALLER
-local function imap(lhs, rhs)
-    map("i", lhs, rhs)
-end
-
+--██╗     ███████╗ █████╗ ██████╗ ███████╗██████╗ 
+--██║     ██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗
+--██║     █████╗  ███████║██║  ██║█████╗  ██████╔╝
+--██║     ██╔══╝  ██╔══██║██║  ██║██╔══╝  ██╔══██╗
+--███████╗███████╗██║  ██║██████╔╝███████╗██║  ██║
+--╚══════╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝
 -- SETTINGS
-nmap("<leader>,", ":tabedit ~/.dotfiles/nvim/.config/nvim/lua/tstoiu17/<CR>")
+vim.keymap.set("n", "<leader>,", ":tabedit ~/.dotfiles/nvim/.config/nvim/lua/tstoiu17/<CR>")
 -- source file
-nmap("<leader>r", ":source ~/.dotfiles/nvim/.config/nvim/init.lua<CR>")
-
--- MOVEMENTS
-
--- move between splits
-nmap("<C-h>", ":wincmd h<CR>")
-nmap("<C-j>", ":wincmd j<CR>")
-nmap("<C-k>", ":wincmd k<CR>")
-nmap("<C-l>", ":wincmd l<CR>")
-
--- New tab
-nmap('te', ':tabedit<CR>')
-
--- Split window
-nmap('ss', ':split<Return><C-w>w')
-nmap('sv', ':vsplit<Return><C-w>w')
-
--- Switch window
-nmap('sh', '<C-w>h')
-nmap('sk', '<C-w>k')
-nmap('sj', '<C-w>j')
-nmap('sl', '<C-w>l')
-
--- Move window
-nmap('sH', '<C-w>H')
-nmap('sK', '<C-w>K')
-nmap('sJ', '<C-w>J')
-nmap('sL', '<C-w>L')
-
+vim.keymap.set("n", "<leader>r", ":source<CR>")
 -- ACTIONS
-
-nmap("<leader>e", ":Ex<CR>")
-nmap("<leader>w", ":w<CR>")
+vim.keymap.set("n", "<leader>w", ":w<CR>")
+vim.keymap.set("n", "<leader>W", ":wq<CR>")
+vim.keymap.set("n", "<leader>s", ":source ~/.dotfiles/nvim/.config/nvim/init.lua<CR>:PackerSync<CR>")
+vim.keymap.set("n", "<leader>h", ":noh<CR>", { silent = true })
 
 -- EDITING
-
--- don't save deletions made with "x"
-nmap("x", '"_x')
-vmap("x", '"_x')
-
 -- increment/decrement
-nmap("+", "<C-a>")
-vmap("+", "<C-a>")
-nmap("-", "<C-x>")
-vmap("-", "<C-x>")
+vim.keymap.set("n", "+", "<C-a>")
+vim.keymap.set("v", "+", "<C-a>")
+vim.keymap.set("n", "-", "<C-x>")
+vim.keymap.set("v", "-", "<C-x>")
 -- power of g
-nmap("g+", "g<C-a>")
-vmap("g+", "g<C-a>")
-nmap("g-", "g<C-x>")
-vmap("g-", "g<C-x>")
+vim.keymap.set("n", "g+", "g<C-a>")
+vim.keymap.set("v", "g+", "g<C-a>")
+vim.keymap.set("n", "g-", "g<C-x>")
+vim.keymap.set("v", "g-", "g<C-x>")
 
--- yanking
-nmap("Y", "y$")
-vmap("<C-C>", '"+y')
+--██╗   ██╗ █████╗ ███╗   ██╗██╗  ██╗
+--╚██╗ ██╔╝██╔══██╗████╗  ██║██║ ██╔╝
+-- ╚████╔╝ ███████║██╔██╗ ██║█████╔╝ 
+--  ╚██╔╝  ██╔══██║██║╚██╗██║██╔═██╗ 
+--   ██║   ██║  ██║██║ ╚████║██║  ██╗
+--   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝
+-- yank to end of lines
+vim.keymap.set("n", "Y", "y$")
+-- system clipboard
+vim.keymap.set("v", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>p", '"+p')
+vim.keymap.set("v", "<leader>p", '"+p')
+vim.keymap.set("n", "<leader>P", '"+P')
+vim.keymap.set("v", "<leader>P", '"+P')
+--  deletions
+vim.keymap.set("n", "<leader>x", '"_x')
+vim.keymap.set("v", "<leader>x", '"_x')
 
--- selection
-nmap("<C-a>", "ggVG")
+--██╗    ██╗██╗███╗   ██╗██████╗  ██████╗ ██╗    ██╗███████╗
+--██║    ██║██║████╗  ██║██╔══██╗██╔═══██╗██║    ██║██╔════╝
+--██║ █╗ ██║██║██╔██╗ ██║██║  ██║██║   ██║██║ █╗ ██║███████╗
+--██║███╗██║██║██║╚██╗██║██║  ██║██║   ██║██║███╗██║╚════██║
+--╚███╔███╔╝██║██║ ╚████║██████╔╝╚██████╔╝╚███╔███╔╝███████║
+-- ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝╚═════╝  ╚═════╝  ╚══╝╚══╝ ╚══════╝
+-- Split window
+vim.keymap.set("n", 'ss', ':split<CR><C-w>w')
+vim.keymap.set("n", 'sv', ':vsplit<CR><C-w>w')
+-- Close window
+vim.keymap.set("n", 'sq', '<C-w>q')
+-- Resize window
+vim.keymap.set("n", 's>', '<C-w>10>')
+vim.keymap.set("n", 's<', '<C-w>10<')
+vim.keymap.set("n", 's=', '<C-w>=')
+-- Switch window
+vim.keymap.set("n", 'sh', '<C-w>h')
+vim.keymap.set("n", 'sk', '<C-w>k')
+vim.keymap.set("n", 'sj', '<C-w>j')
+vim.keymap.set("n", 'sl', '<C-w>l')
+-- Move window
+vim.keymap.set("n", 'sH', '<C-w>H')
+vim.keymap.set("n", 'sK', '<C-w>K')
+vim.keymap.set("n", 'sJ', '<C-w>J')
+vim.keymap.set("n", 'sL', '<C-w>L')
+-- next and prev buffer
+vim.keymap.set("n", "<C-l>", ":BufferLineCycleNext<CR>")
+vim.keymap.set("n", "<C-h>", ":BufferLineCyclePrev<CR>")
+vim.keymap.set("n", "<C-S-L>", ":BufferLineMoveNext<CR>")
+vim.keymap.set("n", "<C-S-H>", ":BufferLineMovePrev<CR>")
 
+--███╗   ███╗ ██████╗ ██╗   ██╗███████╗███╗   ███╗███████╗███╗   ██╗████████╗
+--████╗ ████║██╔═══██╗██║   ██║██╔════╝████╗ ████║██╔════╝████╗  ██║╚══██╔══╝
+--██╔████╔██║██║   ██║██║   ██║█████╗  ██╔████╔██║█████╗  ██╔██╗ ██║   ██║   
+--██║╚██╔╝██║██║   ██║╚██╗ ██╔╝██╔══╝  ██║╚██╔╝██║██╔══╝  ██║╚██╗██║   ██║   
+--██║ ╚═╝ ██║╚██████╔╝ ╚████╔╝ ███████╗██║ ╚═╝ ██║███████╗██║ ╚████║   ██║   
+--╚═╝     ╚═╝ ╚═════╝   ╚═══╝  ╚══════╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝   ╚═╝   
+-- center after moving up and down
+vim.keymap.set("n", '<C-u>', '<C-u>zz', { noremap = false })
+vim.keymap.set("n", '<C-d>', '<C-d>zz', { noremap = false })
