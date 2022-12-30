@@ -293,11 +293,3 @@ workspace $ws13 output eDP
 workspace $ws14 output eDP
 
 focus_follows_mouse no
-
-exec --no-startup-id i3-sensible-terminal --class qalc,qalc
-
-
-bindsym $mod+t [class="qalc"] scratchpad show; move position center
-
-# open 9anime continue watching page
-bindsym $mod+Shift+g exec --no-startup-id google-chrome --new-window https://9anime.to/user/continue-watching https://www.twitch.tv

@@ -26,7 +26,7 @@ memory {
 }
 
 wireless _first_ {
-        format_up = "W: (%quality at %essid )"
+        format_up = "W: (%quality at %essid, %bitrate / %frequency )"
         format_down = "W: down"
 }
 
@@ -52,11 +52,11 @@ tztime local {
         format = "%l:%M:%S %Y-%m-%d"
 }
 
-#cpu_temperature 0 {                                                                                                 
-#        format = "%degrees °C"                                                                         
+#cpu_temperature 0 {
+#        format = "%degrees °C"
 #        # TODO: this path isn't mine, need to find mine
-#        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input"                               
-#}   
+#        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input"
+#}
 
 volume master {
         format = "♪: %volume"
