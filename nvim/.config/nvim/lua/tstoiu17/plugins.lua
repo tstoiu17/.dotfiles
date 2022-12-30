@@ -88,6 +88,8 @@ return require("packer").startup(function(use)
     }
     use "lukas-reineke/indent-blankline.nvim"
     use "karb94/neoscroll.nvim"
+    -- Lua
+    use "folke/zen-mode.nvim"
 
     ------------ Themes
     use "folke/tokyonight.nvim"
