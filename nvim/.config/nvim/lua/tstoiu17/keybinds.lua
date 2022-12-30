@@ -69,11 +69,6 @@ vim.keymap.set("n", 'sH', '<C-w>H')
 vim.keymap.set("n", 'sK', '<C-w>K')
 vim.keymap.set("n", 'sJ', '<C-w>J')
 vim.keymap.set("n", 'sL', '<C-w>L')
--- next and prev buffer
-vim.keymap.set("n", "<C-l>", ":BufferLineCycleNext<CR>")
-vim.keymap.set("n", "<C-h>", ":BufferLineCyclePrev<CR>")
-vim.keymap.set("n", "<C-S-L>", ":BufferLineMoveNext<CR>")
-vim.keymap.set("n", "<C-S-H>", ":BufferLineMovePrev<CR>")
 
 --███╗   ███╗ ██████╗ ██╗   ██╗███████╗███╗   ███╗███████╗███╗   ██╗████████╗
 --████╗ ████║██╔═══██╗██║   ██║██╔════╝████╗ ████║██╔════╝████╗  ██║╚══██╔══╝
@@ -81,6 +76,3 @@ vim.keymap.set("n", "<C-S-H>", ":BufferLineMovePrev<CR>")
 --██║╚██╔╝██║██║   ██║╚██╗ ██╔╝██╔══╝  ██║╚██╔╝██║██╔══╝  ██║╚██╗██║   ██║   
 --██║ ╚═╝ ██║╚██████╔╝ ╚████╔╝ ███████╗██║ ╚═╝ ██║███████╗██║ ╚████║   ██║   
 --╚═╝     ╚═╝ ╚═════╝   ╚═══╝  ╚══════╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝   ╚═╝   
--- center after moving up and down
-vim.keymap.set("n", '<C-u>', '<C-u>zz', { noremap = false })
-vim.keymap.set("n", '<C-d>', '<C-d>zz', { noremap = false })
