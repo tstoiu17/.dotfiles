@@ -11,7 +11,7 @@ vim.keymap.set("n", "<leader>r", ":source<CR>")
 -- ACTIONS
 vim.keymap.set("n", "<leader>w", ":w<CR>")
 vim.keymap.set("n", "<leader>W", ":wq<CR>")
-vim.keymap.set("n", "<leader>s", ":source ~/.dotfiles/nvim/.config/nvim/init.lua<CR>:PackerSync<CR>")
+vim.keymap.set("n", "<leader>s", ":source ~/.dotfiles/nvim/.config/nvim/lua/tstoiu17/plugins.lua<CR>:PackerSync<CR>")
 vim.keymap.set("n", "<leader>h", ":noh<CR>", { silent = true })
 
 -- EDITING
