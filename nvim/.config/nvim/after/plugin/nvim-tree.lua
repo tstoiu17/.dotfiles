@@ -15,6 +15,11 @@ require("nvim-tree").setup {
     update_focused_file = {
         enable = true,
     },
+    actions = {
+        change_dir = {
+            global = true
+        }
+    },
     sync_root_with_cwd = true,
     open_on_setup = true,
     sort_by = "case_sensitive",
@@ -47,6 +52,6 @@ require("nvim-tree").setup {
         end,
     },
     filters = {
-        dotfiles = true,
+        dotfiles = false,
     },
 }
