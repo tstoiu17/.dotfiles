@@ -3,7 +3,7 @@ export READER="zathura"
 export BROWSER="google-chrome"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
-export EDITOR='/home/tudor/.local/bin/lvim'
+export EDITOR="nvim"
 bindkey -v
 
 ########## ALIASES ########## 
