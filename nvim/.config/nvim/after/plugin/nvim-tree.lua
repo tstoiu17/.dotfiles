@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>e", ":NvimTreeFocus<CR>", { desc = "[E]xplorer" })
+vim.keymap.set("n", "<leader>e", ":NvimTreeFocus<CR>", { silent = true, desc = "[E]xplorer" })
 
 require("nvim-tree").setup {
     hijack_cursor = true,
