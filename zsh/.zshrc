@@ -69,7 +69,7 @@ alias z="zathura"
 
 alias rp="/home/tudor/.local/bin/run_cmd.sh python3"
 alias dl="cd ~/Downloads/"
-alias img="cd ~/Images"
+alias img="cd ~/img"
 alias repos="cd ~/repos"
 alias grvw="gh repo view --web" # repo web view
 alias vc="python3 -m venv venv"
@@ -91,7 +91,7 @@ eval "$(starship init zsh)"
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
-alias im="cd ~/Images"
+alias im="cd ~/img"
 
 alias ipy="ipython --TerminalInteractiveShell.editing_mode=vi"
 alias bt="bluetoothctl"
