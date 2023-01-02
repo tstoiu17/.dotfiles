@@ -26,7 +26,7 @@ memory {
 }
 
 wireless _first_ {
-        format_up = "W: (%quality at %essid, %bitrate / %frequency )"
+        format_up = "W: (%quality at %essid, %bitrate )"
         format_down = "W: down"
 }
 
