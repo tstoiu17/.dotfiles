@@ -82,6 +82,7 @@ alias vde="deactivate"
 alias ta="tmux attach -t" # -t requires a name so press TAB to select from active sessions
 alias tk="tmux kill-session -t" # -t requires a name so press TAB to select from active sessions
 alias ts="tmux-sessionizer"
+alias td="tmux-dotfiles"
 alias tn="tmux new-session -s $(pwd | sed 's/.*\///g') -c $(pwd)" # make a new tmux session in the current dir
 alias jl="jupyter lab"
 alias pps="/home/tudor/repos/pipes.sh/pipes.sh"
