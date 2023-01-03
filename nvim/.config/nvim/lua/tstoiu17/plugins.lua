@@ -39,6 +39,8 @@ return require("packer").startup(function(use)
         }
     }
     use "folke/neodev.nvim"
+
+    ------------ Syntax
     -- Treesitter and friends
     use {
         "nvim-treesitter/nvim-treesitter",
@@ -52,8 +54,20 @@ return require("packer").startup(function(use)
         after = "nvim-treesitter",
     }
     use "nvim-treesitter/nvim-treesitter-context"
-    -- Commenting
     use "numToStr/Comment.nvim"
+    use {
+        "kylechui/nvim-surround",
+        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    }
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
 
     ------------ Functionality
     use {
@@ -86,6 +100,7 @@ return require("packer").startup(function(use)
         "nvim-lualine/lualine.nvim",
         requires = { "kyazdani42/nvim-web-devicons", opt = true }
     }
+    use "stevearc/dressing.nvim"
     use "lukas-reineke/indent-blankline.nvim"
     use "karb94/neoscroll.nvim"
     -- Lua
