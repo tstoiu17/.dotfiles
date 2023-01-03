@@ -12,19 +12,16 @@ vim.keymap.set("n", "<leader>s", ":source ~/.dotfiles/nvim/.config/nvim/lua/tsto
 vim.keymap.set("n", "<leader>w", ":w<CR>")
 vim.keymap.set("n", "<leader>W", ":wq<CR>")
 vim.keymap.set("n", "<leader>h", ":noh<CR>", { silent = true })
+vim.keymap.set("n", "\\q", ":qa<CR>", { silent = true })
 vim.keymap.set({ "n", "v" }, "<leader>=", "mzgg=G`z")
 
 -- EDITING
 -- increment/decrement
-vim.keymap.set("n", "+", "<C-a>")
-vim.keymap.set("v", "+", "<C-a>")
-vim.keymap.set("n", "-", "<C-x>")
-vim.keymap.set("v", "-", "<C-x>")
+vim.keymap.set({ "n", "v" }, "+", "<C-a>")
+vim.keymap.set({ "n", "v" }, "-", "<C-x>")
 -- power of g
-vim.keymap.set("n", "g+", "g<C-a>")
-vim.keymap.set("v", "g+", "g<C-a>")
-vim.keymap.set("n", "g-", "g<C-x>")
-vim.keymap.set("v", "g-", "g<C-x>")
+vim.keymap.set({ "n", "v" }, "g+", "g<C-a>")
+vim.keymap.set({ "n", "v" }, "g-", "g<C-x>")
 
 --██╗   ██╗ █████╗ ███╗   ██╗██╗  ██╗
 --╚██╗ ██╔╝██╔══██╗████╗  ██║██║ ██╔╝
@@ -38,9 +35,8 @@ vim.keymap.set("n", "Y", "y$")
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { noremap = false })
 vim.keymap.set({ "n", "v" }, "<leader>p", '"+p', { noremap = false })
 vim.keymap.set({ "n", "v" }, "<leader>P", '"+P', { noremap = false })
---  deletions
-vim.keymap.set("n", "<leader>x", '"_x')
-vim.keymap.set("v", "<leader>x", '"_x')
+-- deletions to black hole register
+vim.keymap.set({ "n", "v" }, "<leader>x", '"_x')
 
 --██╗    ██╗██╗███╗   ██╗██████╗  ██████╗ ██╗    ██╗███████╗
 --██║    ██║██║████╗  ██║██╔══██╗██╔═══██╗██║    ██║██╔════╝
