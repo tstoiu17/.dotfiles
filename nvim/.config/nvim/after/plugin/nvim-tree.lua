@@ -39,7 +39,7 @@ require("nvim-tree").setup {
     renderer = {
         add_trailing = true,
         group_empty = true,
-        indent_width = 3,
+        indent_width = 2,
         indent_markers = {
             enable = true,
         },
