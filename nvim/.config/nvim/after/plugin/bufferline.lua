@@ -4,8 +4,8 @@ require("bufferline").setup {
         offsets = {
             {
                 filetype = "NvimTree",
-                text = "Explorer",
-                highlight = "Directory",
+                -- text = "Explorer",
+                -- highlight = "Directory",
                 separator = true -- use a "true" to enable the default, or set your own character
             }
         },
@@ -24,6 +24,8 @@ vim.keymap.set("n", "\\d", function () require("bufdelete").bufdelete(0) end, { 
 vim.keymap.set("n", "<leader>bp", ":BufferLinePick<CR>", { silent = true, desc = "[b]uffer [p]ick" })
 vim.keymap.set("n", "<leader>bml", ":BufferLineMoveNext<CR>", { silent = true, desc = "[b]uffer [m]ove right" })
 vim.keymap.set("n", "<leader>bmh", ":BufferLineMovePrev<CR>", { silent = true, desc = "[b]uffer [m]ove left" })
+
+-- Default config
 --[[
 require('bufferline').setup {
     options = {
