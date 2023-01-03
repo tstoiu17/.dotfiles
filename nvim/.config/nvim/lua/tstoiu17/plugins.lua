@@ -19,8 +19,7 @@ return require("packer").startup(function(use)
 
     ------------ Language stuff
     -- LSP
-    use {
-        "VonHeikemen/lsp-zero.nvim",
+    use { "VonHeikemen/lsp-zero.nvim",
         requires = {
             -- LSP Support
             {"neovim/nvim-lspconfig"},
@@ -42,21 +41,18 @@ return require("packer").startup(function(use)
 
     ------------ Syntax
     -- Treesitter and friends
-    use {
-        "nvim-treesitter/nvim-treesitter",
+    use { "nvim-treesitter/nvim-treesitter",
         run = function()
             local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
             ts_update()
         end,
     }
-    use {
-        "nvim-treesitter/nvim-treesitter-textobjects",
+    use { "nvim-treesitter/nvim-treesitter-textobjects",
         after = "nvim-treesitter",
     }
     use "nvim-treesitter/nvim-treesitter-context"
     use "numToStr/Comment.nvim"
-    use {
-        "kylechui/nvim-surround",
+    use { "kylechui/nvim-surround",
         tag = "*", -- Use for stability; omit to use `main` branch for the latest features
         config = function()
             require("nvim-surround").setup({
@@ -64,19 +60,17 @@ return require("packer").startup(function(use)
             })
         end
     }
-    use {
-        "windwp/nvim-autopairs",
+    use { "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
+    use { "nguyenvukhang/nvim-toggler" }
 
     ------------ Functionality
-    use {
-        "nvim-telescope/telescope.nvim", tag = "0.1.0",
+    use { "nvim-telescope/telescope.nvim", tag = "0.1.0",
         -- or                            , branch = "0.1.x",
         requires = { {"nvim-lua/plenary.nvim"} }
     }
-    use {
-        "nvim-tree/nvim-tree.lua",
+    use { "nvim-tree/nvim-tree.lua",
         requires = {
             "nvim-tree/nvim-web-devicons", -- optional, for file icons
         },
@@ -85,26 +79,27 @@ return require("packer").startup(function(use)
     use "folke/which-key.nvim"
     use "ThePrimeagen/harpoon"
     use "mbbill/undotree"
-    use {
-        "iamcco/markdown-preview.nvim",
+    use { "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     }
 
     ------------ UI
-    use {
-        "akinsho/bufferline.nvim",
+    use { "akinsho/bufferline.nvim",
         tag = "v3.*", requires = "nvim-tree/nvim-web-devicons"
     }
     use "famiu/bufdelete.nvim"
-    use {
-        "nvim-lualine/lualine.nvim",
+    use { "nvim-lualine/lualine.nvim",
         requires = { "kyazdani42/nvim-web-devicons", opt = true }
     }
     use "stevearc/dressing.nvim"
     use "lukas-reineke/indent-blankline.nvim"
     use "karb94/neoscroll.nvim"
-    -- Lua
     use "folke/zen-mode.nvim"
+    use { "norcalli/nvim-colorizer.lua",
+        config = function()
+            require("colorizer").setup()
+        end
+    }
 
     ------------ Themes
     use "folke/tokyonight.nvim"
