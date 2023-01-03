@@ -100,6 +100,12 @@ return require("packer").startup(function(use)
             require("colorizer").setup()
         end
     }
+    use {
+        "lewis6991/gitsigns.nvim",
+        config = function()
+            require("gitsigns").setup()
+        end
+    }
 
     ------------ Themes
     use "folke/tokyonight.nvim"
@@ -107,6 +113,7 @@ return require("packer").startup(function(use)
     use { "catppuccin/nvim", as = "catppuccin" }
     use { "rose-pine/neovim", as = "rose-pine" }
 
+    ------------ Bootstrap
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
