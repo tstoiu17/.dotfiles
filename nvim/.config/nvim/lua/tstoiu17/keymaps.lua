@@ -22,6 +22,9 @@ vim.keymap.set({ "n", "v" }, "-", "<C-x>")
 -- power of g
 vim.keymap.set({ "n", "v" }, "g+", "g<C-a>")
 vim.keymap.set({ "n", "v" }, "g-", "g<C-x>")
+-- keep selected text indented
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
 
 --██╗   ██╗ █████╗ ███╗   ██╗██╗  ██╗
 --╚██╗ ██╔╝██╔══██╗████╗  ██║██║ ██╔╝
