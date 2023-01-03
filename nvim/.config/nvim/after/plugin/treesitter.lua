@@ -39,13 +39,12 @@ require'nvim-treesitter.configs'.setup {
             node_decremental = '<c-backspace>',
         },
     },
+
     textobjects = {
         select = {
             enable = true,
-
             -- Automatically jump forward to textobj, similar to targets.vim
             lookahead = true,
-
             keymaps = {
                 -- You can use the capture groups defined in textobjects.scm
                 ['aa'] = '@parameter.outer',
@@ -98,5 +97,9 @@ require'nvim-treesitter.configs'.setup {
                 ["[]"] = "@class.outer",
             },
         },
+    },
+
+    indent = {
+        enable = true,
     },
 }
