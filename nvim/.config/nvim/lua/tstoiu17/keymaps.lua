@@ -5,14 +5,14 @@
 --███████╗███████╗██║  ██║██████╔╝███████╗██║  ██║
 --╚══════╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝
 -- SETTINGS
-vim.keymap.set("n", "<leader>,", ":tabedit ~/.dotfiles/nvim/.config/nvim/lua/tstoiu17/<CR>")
 -- source file
 vim.keymap.set("n", "<leader>r", ":source<CR>")
+vim.keymap.set("n", "<leader>s", ":source ~/.dotfiles/nvim/.config/nvim/lua/tstoiu17/plugins.lua<CR>:PackerSync<CR>")
 -- ACTIONS
 vim.keymap.set("n", "<leader>w", ":w<CR>")
 vim.keymap.set("n", "<leader>W", ":wq<CR>")
-vim.keymap.set("n", "<leader>s", ":source ~/.dotfiles/nvim/.config/nvim/lua/tstoiu17/plugins.lua<CR>:PackerSync<CR>")
 vim.keymap.set("n", "<leader>h", ":noh<CR>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>=", "mzgg=G`z")
 
 -- EDITING
 -- increment/decrement
@@ -35,11 +35,9 @@ vim.keymap.set("v", "g-", "g<C-x>")
 -- yank to end of lines
 vim.keymap.set("n", "Y", "y$")
 -- system clipboard
-vim.keymap.set("v", "<leader>y", '"+y')
-vim.keymap.set("n", "<leader>p", '"+p')
-vim.keymap.set("v", "<leader>p", '"+p')
-vim.keymap.set("n", "<leader>P", '"+P')
-vim.keymap.set("v", "<leader>P", '"+P')
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { noremap = false })
+vim.keymap.set({ "n", "v" }, "<leader>p", '"+p', { noremap = false })
+vim.keymap.set({ "n", "v" }, "<leader>P", '"+P', { noremap = false })
 --  deletions
 vim.keymap.set("n", "<leader>x", '"_x')
 vim.keymap.set("v", "<leader>x", '"_x')
