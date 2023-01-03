@@ -61,6 +61,8 @@ vim.keymap.set("n", 's<', '<C-w>10<')
 vim.keymap.set("n", 's+', '<C-w>5+')
 vim.keymap.set("n", 's-', '<C-w>5-')
 vim.keymap.set("n", 's=', '<C-w>=')
+vim.keymap.set("n", 's_', '<C-w>_')
+vim.keymap.set("n", 's|', '<C-w>|')
 -- Switch window
 vim.keymap.set("n", 'sh', '<C-w>h')
 vim.keymap.set("n", 'sk', '<C-w>k')
