@@ -3,6 +3,7 @@ require("lualine").setup {
         component_separators = "",
         section_separators = "",
         disabled_filetypes = { 'undotree', 'packer', 'NvimTree' },
+        globalstatus = true,
     },
     sections = {
         lualine_a = {{
