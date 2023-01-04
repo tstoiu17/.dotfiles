@@ -106,6 +106,7 @@ return require("packer").startup(function(use)
             require("gitsigns").setup()
         end
     }
+    use { "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" }
 
     ------------ Themes
     use "folke/tokyonight.nvim"
