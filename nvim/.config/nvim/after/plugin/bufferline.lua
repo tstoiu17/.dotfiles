@@ -26,8 +26,7 @@ vim.keymap.set("n", "<leader>bml", ":BufferLineMoveNext<CR>", { silent = true, d
 vim.keymap.set("n", "<leader>bmh", ":BufferLineMovePrev<CR>", { silent = true, desc = "[b]uffer [m]ove left" })
 
 -- Default config
---[[
-require('bufferline').setup {
+--[[ require('bufferline').setup {
     options = {
         mode = "buffers", -- set to "tabs" to only show tabpages instead
         numbers = "none" | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
@@ -116,5 +115,4 @@ require('bufferline').setup {
             return buffer_a.modified > buffer_b.modified
         end
     }
-}
---]]
+} ]]

@@ -1,11 +1,12 @@
 -- [[ ACTIONS ]]
 -- source file
-vim.keymap.set("n", "<leader>r", ":source<CR>")
-vim.keymap.set("n", "<leader>s", ":source ~/.dotfiles/nvim/.config/nvim/lua/tstoiu17/plugins.lua<CR>:PackerSync<CR>")
+vim.keymap.set("n", "\\r", ":source<CR>")
+vim.keymap.set("n", "\\s", ":source ~/.dotfiles/nvim/.config/nvim/lua/tstoiu17/plugins.lua<CR>:PackerSync<CR>")
 vim.keymap.set("n", "\\w", ":w<CR>")
 vim.keymap.set("n", "\\W", ":wq<CR>")
 vim.keymap.set("n", "\\q", ":qa<CR>", { silent = true })
 vim.keymap.set("n", "\\Q", ":qa!<CR>", { silent = true })
+vim.keymap.set("n", "\\t", ":tabclose<CR>", { silent = true })
 vim.keymap.set("n", "<leader>h", ":noh<CR>", { silent = true })
 vim.keymap.set({ "n", "v" }, "<leader>=", "mzgg=G`z")
 
