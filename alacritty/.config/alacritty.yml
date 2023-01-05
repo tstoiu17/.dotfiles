@@ -34,15 +34,6 @@ key_bindings:
   #   ██║   ██║ ╚═╝ ██║╚██████╔╝██╔╝ ██╗
   #   ╚═╝   ╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═╝
 
-  #████████╗ ██████╗ ██████╗  ██████╗ 
-  #╚══██╔══╝██╔═══██╗██╔══██╗██╔═══██╗
-  #   ██║   ██║   ██║██║  ██║██║   ██║
-  #   ██║   ██║   ██║██║  ██║██║   ██║
-  #   ██║   ╚██████╔╝██████╔╝╚██████╔╝
-  #   ╚═╝    ╚═════╝ ╚═════╝  ╚═════╝ 
-
-
-  # TODO: redo macros and tmux binds so they use the default tmux shortcut
   # source: https://www.joshmedeski.com/posts/macos-keyboard-shortcuts-for-tmux
   # Select window 1-9
   - { key: Key1, mods: Alt, chars: "\x02\x31" }
@@ -56,6 +47,10 @@ key_bindings:
   - { key: Key9, mods: Alt, chars: "\x02\x39" }
   # Select a new tmux session for the attached client interactively
   - { key: S, mods: Alt, chars: "\x02\x73" }
+  # open tmux-sessionizer popup
+  - { key: S, mods: Alt|Shift, chars: "\x02\x53" }
+  # open tmux-dotfiles popup
+  - { key: D, mods: Alt|Shift, chars: "\x02\x44" }
   # Quit session
   - { key: Q, mods: Alt|Shift, chars: "\x02\x51" }
   # Rename the current tmux window
