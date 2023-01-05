@@ -30,7 +30,7 @@ alias sai="sudo apt install"
 alias upd="sudo apt update"
 alias rmrf="rm -rf"
 
-alias lg="lazygit"
+alias gg="lazygit"
 
 alias dot="cd ~/.dotfiles"
 alias cm="cmatrix"
