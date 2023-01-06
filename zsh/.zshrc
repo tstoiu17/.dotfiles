@@ -103,3 +103,6 @@ alias anilist="xdg-open https://anilist.co/user/Zakoza/animelist"
 
 [ -f "/home/tudor/.ghcup/env" ] && source "/home/tudor/.ghcup/env" # ghcup-env
 alias ghci="rlwrap -a ghci"
+alias pptx2pdf="soffice --headless --convert-to pdf"
+
+alias nv="v ~/.config/nvim/"
