@@ -41,6 +41,7 @@ vim.opt.timeoutlen = 500 -- for folke/which-key.nvim plugin
 vim.opt.shortmess:append("c")
 
 vim.opt.colorcolumn = "80"
+vim.opt.textwidth = 79
 
 vim.g.mapleader = " "
 

@@ -107,6 +107,11 @@ return require("packer").startup(function(use)
         end
     }
     use { "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" }
+    -- use { "folke/twilight.nvim",
+    --     config = function()
+    --         require("twilight").setup {}
+    --     end
+    -- }
 
     ------------ Themes
     use "folke/tokyonight.nvim"
