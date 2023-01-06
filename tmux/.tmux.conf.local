@@ -361,7 +361,7 @@ bind C-b send-prefix #!important
 # bind v new-window -c #{pane_current_path} #!important
 
 # move status line to top
-set -g status-position top
+# set -g status-position top
 
 # reload tmux config
 bind r source-file ~/.tmux.conf
