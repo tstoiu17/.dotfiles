@@ -1,0 +1,5 @@
+map j navigate next
+map k navigate previous
+map J scroll down
+map K scroll up
+set selection-clipboard clipboard

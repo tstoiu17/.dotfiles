@@ -10,3 +10,4 @@ stow -R lvim
 stow -R nvim
 stow -R tmux
 stow -R zsh
+stow -R zathura
