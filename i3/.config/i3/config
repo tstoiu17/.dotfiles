@@ -271,7 +271,7 @@ bindsym $mod+t mode "$tablet_mode"
 
 # region capture screenshot
 bindsym $mod+Shift+s exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
-bindsym $mod+Ctrl+Shift+s exec --no-startup-id maim --select ~/Images/$(date +%s).png
+bindsym $mod+Ctrl+Shift+s exec --no-startup-id maim --select ~/img/$(date +%s).png
 
 # Sreen brightness controls
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
