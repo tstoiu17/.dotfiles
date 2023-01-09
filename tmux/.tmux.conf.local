@@ -377,8 +377,8 @@ bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
-bind -r g display-popup -d '#{pane_current_path}' -w95% -h90% -E lazygit
-bind -r S display-popup -d '#{pane_current_path}' -w60% -h60% -E tmux-sessionizer
+bind -r g display-popup -d '#{pane_current_path}' -w100% -h100% -E lazygit
+bind -r S display-popup -d '#{pane_current_path}' -E tmux-sessionizer
 bind -r D run-shell tmux-dotfiles
 
 set -g status-justify left
