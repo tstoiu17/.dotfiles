@@ -21,10 +21,11 @@ require("bufferline").setup {
 vim.keymap.set("n", "<C-l>", ":BufferLineCycleNext<CR>", { silent = true })
 vim.keymap.set("n", "<C-h>", ":BufferLineCyclePrev<CR>", { silent = true })
 vim.keymap.set("n", "\\d", function () require("bufdelete").bufdelete(0) end, { desc = "[b]uffer [d]elete" })
+--[[ using <leader>b for ":Telescope buffers", not sure if I even need these
 vim.keymap.set("n", "<leader>bp", ":BufferLinePick<CR>", { silent = true, desc = "[b]uffer [p]ick" })
 vim.keymap.set("n", "<leader>bml", ":BufferLineMoveNext<CR>", { silent = true, desc = "[b]uffer [m]ove right" })
 vim.keymap.set("n", "<leader>bmh", ":BufferLineMovePrev<CR>", { silent = true, desc = "[b]uffer [m]ove left" })
-
+]]
 -- Default config
 --[[ require('bufferline').setup {
     options = {
