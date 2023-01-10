@@ -82,6 +82,7 @@ return require("packer").startup(function(use)
     use { "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     }
+    use { "ziontee113/icon-picker.nvim" }
 
     ------------ UI
     use { "akinsho/bufferline.nvim",
