@@ -105,3 +105,4 @@ alias anilist="xdg-open https://anilist.co/user/Zakoza/animelist"
 alias pptx2pdf="soffice --headless --convert-to pdf"
 
 alias nv="v ~/.config/nvim/"
+alias clip2png="xclip -selection clipboard -t image/png -o >"
