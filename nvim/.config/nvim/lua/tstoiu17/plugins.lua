@@ -107,6 +107,7 @@ return require("packer").startup(function(use)
             require("gitsigns").setup()
         end
     }
+    use { "tpope/vim-fugitive" }
     use { "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" }
     -- use { "folke/twilight.nvim",
     --     config = function()
