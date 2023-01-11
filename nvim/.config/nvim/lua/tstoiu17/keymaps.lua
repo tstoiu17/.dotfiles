@@ -9,6 +9,7 @@ vim.keymap.set("n", "\\Q", ":qa!<CR>", { silent = true })
 vim.keymap.set("n", "\\t", ":tabclose<CR>", { silent = true })
 vim.keymap.set("n", "<leader>h", ":noh<CR>", { silent = true })
 vim.keymap.set({ "n", "v" }, "<leader>=", "mzgg=G`z")
+vim.keymap.set("n", "<leader>m", ":make<CR>")
 
 -- [[ EDITING ]]
 -- increment/decrement
@@ -34,6 +35,8 @@ vim.keymap.set({ "n", "v" }, "<leader>x", '"_x')
 -- pretty much replacing the <C-w> prefix for window maps with "s"
 -- because everything s can do can be done with c
 vim.keymap.set("n", "s", "<C-w>")
+vim.keymap.set("n", "ss", "<C-w>s<C-w>w")
+vim.keymap.set("n", "sv", "<C-w>v<C-w>w")
 -- Resize window
 vim.keymap.set("n", "s>", "<C-w>10>")
 vim.keymap.set("n", "s<", "<C-w>10<")
