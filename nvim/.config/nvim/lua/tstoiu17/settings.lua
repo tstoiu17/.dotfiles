@@ -50,6 +50,6 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 --vim.cmd.colorscheme("rose-pine")
-vim.cmd.colorscheme("catppuccin")
---vim.cmd.colorscheme("tokyonight")
+-- vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("tokyonight")
 --vim.cmd.colorscheme("moonfly")
