@@ -280,8 +280,8 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set +10% &
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q set 10%- &
 
 # disable window title
-default_border pixel 4
-default_floating_border pixel 4
+default_border pixel 3
+default_floating_border pixel 3
 
 # workspaces on secondary monitor
 workspace $ws2 output HDMI-A-0 
