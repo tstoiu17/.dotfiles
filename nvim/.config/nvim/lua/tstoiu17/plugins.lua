@@ -121,6 +121,9 @@ return require("packer").startup(function(use)
     use { "catppuccin/nvim", as = "catppuccin" }
     use { "rose-pine/neovim", as = "rose-pine" }
 
+    ------------ Useless?
+    use "eandrju/cellular-automaton.nvim"
+
     ------------ Bootstrap
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
