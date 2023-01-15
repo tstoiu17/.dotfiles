@@ -83,6 +83,7 @@ return require("packer").startup(function(use)
         run = function() vim.fn["mkdp#util#install"]() end,
     }
     use { "ziontee113/icon-picker.nvim" }
+    use "junegunn/vim-easy-align"
 
     ------------ UI
     use { "akinsho/bufferline.nvim",
