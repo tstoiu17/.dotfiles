@@ -5,9 +5,6 @@ map K scroll up
 set selection-clipboard clipboard
 
 map i recolor
-unmap f
-map f toggle_fullscreen
-map [fullscreen] f toggle_fullscreen
 
 # Open document in fit-width mode by default
 set adjust-open "best-fit"
