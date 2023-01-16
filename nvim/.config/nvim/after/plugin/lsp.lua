@@ -21,6 +21,8 @@ lsp.on_attach(function(client, bufnr)
     bind("n", "<leader>li", "<cmd>LspInfo<cr>",                           opts)
     bind("n", "<leader>lm", "<cmd>Mason<cr>",                             opts)
     bind("n", "<leader>lf", "<cmd>LspZeroFormat<cr>",                     opts)
+    bind("n", "<leader>ls", "<cmd>LspStop<cr>",                     opts)
+    bind("n", "<leader>lS", "<cmd>LspStart<cr>",                     opts)
 end)
 
 lsp.setup()
