@@ -10,7 +10,7 @@ vim.keymap.set("n", "\\t", ":tabclose<CR>", { silent = true })
 vim.keymap.set("n", "\\-", ":CellularAutomaton make_it_rain<CR>", { silent = true, desc = "Make it rain"})
 vim.keymap.set("n", "<leader>h", ":noh<CR>", { silent = true })
 vim.keymap.set({ "n", "v" }, "<leader>=", "mzgg=G`z")
-vim.keymap.set("n", "<leader>m", ":make!<CR>")
+vim.keymap.set("n", "<leader>m", ":w<CR>:make!<CR><CR>", { silent = true })
 
 -- [[ EDITING ]]
 -- increment/decrement
