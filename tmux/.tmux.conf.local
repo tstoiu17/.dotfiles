@@ -386,7 +386,7 @@ set-option -g detach-on-destroy off
 
 # Prompted join-pane
 bind J command-prompt -p "join pane from: "  "join-pane -h -s '%%'"
-bind B set -g status
+bind B set status
 
 # -- tpm -----------------------------------------------------------------------
 
