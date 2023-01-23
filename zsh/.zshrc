@@ -4,6 +4,7 @@ export BROWSER="google-chrome"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 export EDITOR="nvim"
+export LESS='-R'
 bindkey -v
 
 ########## ALIASES ########## 
@@ -65,10 +66,11 @@ alias v="nvim"
 #alias w=
 #alias x=
 #alias y=
-alias z="zathura"
+alias z='zathura --fork $(ls *.pdf | fzf -m)'
 
+alias cl="clear;l"
 alias rp="/home/tudor/.local/bin/run_cmd.sh python3"
-alias dl="cd ~/Downloads/"
+alias dl="cd ~/dl/"
 alias img="cd ~/img"
 alias repos="cd ~/repos"
 alias grvw="gh repo view --web" # repo web view
