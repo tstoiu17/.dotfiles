@@ -5,6 +5,8 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 export EDITOR="nvim"
 export LESS='-R'
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
 bindkey -v
 
 ########## ALIASES ########## 
