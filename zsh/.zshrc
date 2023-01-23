@@ -68,7 +68,7 @@ alias v="nvim"
 #alias w=
 #alias x=
 #alias y=
-alias z='zathura --fork $(ls *.pdf | fzf -m)'
+alias z='zathura --fork'
 
 alias cl="clear;l"
 alias rp="/home/tudor/.local/bin/run_cmd.sh python3"
@@ -83,7 +83,7 @@ alias vde="deactivate"
 
 ########## TMUX ########## 
 
-alias ta="tmux attach -t" # -t requires a name so press TAB to select from active sessions
+alias ta="tmux attach" # -t requires a name so press TAB to select from active sessions
 alias tk="tmux kill-session -t" # -t requires a name so press TAB to select from active sessions
 alias ts="tmux-sessionizer"
 alias td="tmux-dotfiles"
@@ -110,4 +110,6 @@ alias pptx2pdf="soffice --headless --convert-to pdf"
 
 alias nv="v ~/.config/nvim/"
 alias clip2png="xclip -selection clipboard -t image/png -o >"
-alias za="zathura *.pdf &"
+alias za="z *.pdf"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
