@@ -8,4 +8,4 @@ style = "bold black"
 use_12hr = true
 
 [character]
-vimcmd_symbol = "[](bold green)"
+vimcmd_symbol = "[](bold purple)"
