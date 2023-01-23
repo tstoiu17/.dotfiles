@@ -5,3 +5,4 @@ vim.keymap.set('n', '<leader>sg', builtin.git_files, { desc = "[s]earch [g]it fi
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = "[s]earch [h]elp tags" })
 vim.keymap.set('n', '<leader>sc', builtin.colorscheme, { desc = "[s]earch [c]olorscheme" })
 vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = "[s]earch [k]eymaps" })
+vim.keymap.set('n', '<leader>so', builtin.oldfiles, { desc = "[s]earch [o]oldfiles" })
