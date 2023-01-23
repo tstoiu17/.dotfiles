@@ -20,8 +20,6 @@ alias wm="v ~/.config/i3/config"
 alias wms="v ~/.config/i3/i3status/config"
 alias nf="neofetch"
 alias ff="firefox"
-alias anime="ani-cli -q best -f" # best quality and use fzf for search results
-alias ac="google-chrome --new-window https://9anime.to/user/continue-watching &"
 alias cat="batcat"
 alias cx="chmod +x"
 alias clip="xclip -selection c"
@@ -84,14 +82,11 @@ alias vde="deactivate"
 
 ########## TMUX ########## 
 
-alias ta="tmux attach" # -t requires a name so press TAB to select from active sessions
 alias tk="tmux kill-session -t" # -t requires a name so press TAB to select from active sessions
 alias ts="tmux-sessionizer"
 alias td="tmux-dotfiles"
 alias tn="tmux new-session -s $(pwd | sed 's/.*\///g') -c $(pwd)" # make a new tmux session in the current dir
 alias jl="jupyter lab"
-alias pps="/home/tudor/repos/pipes.sh/pipes.sh"
-
 
 eval "$(starship init zsh)"
 
@@ -104,7 +99,6 @@ alias bt="bluetoothctl"
 alias hg="history | grep"
 alias say='figlet -t -f "ANSI Shadow"'
 alias saybigger="figlet -t -f ~/.local/etc/figlet/doh.flf"
-alias anilist="xdg-open https://anilist.co/user/Zakoza/animelist"
 
 [ -f "/home/tudor/.ghcup/env" ] && source "/home/tudor/.ghcup/env" # ghcup-env
 alias pptx2pdf="soffice --headless --convert-to pdf"
