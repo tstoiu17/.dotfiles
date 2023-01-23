@@ -12,3 +12,4 @@ stow -R tmux
 stow -R zsh
 stow -R zathura
 stow -R warpd
+stow -R starship
