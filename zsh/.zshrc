@@ -8,6 +8,7 @@ export LESS='-R'
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 bindkey -v
+KEYTIMEOUT=1
 
 ########## ALIASES ########## 
 
