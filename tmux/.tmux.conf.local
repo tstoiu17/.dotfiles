@@ -337,18 +337,22 @@ tmux_conf_copy_to_os_clipboard=true
 
 # -- user customizations -------------------------------------------------------
 # this is the place to override or undo settings
+# if you don't want Oh my tmux! to alter a binding, append #!important
+# bind v new-window -c #{pane_current_path} #!important
 
 # increase history size
 #set -g history-limit 10000
 
 # start with mouse mode enabled
-set -g mouse on
+set -g mouse             on
+# attach client to last active session when attached session is killed
+set -g detach-on-destroy off
 
-# force Vi mode
-#   really you should export VISUAL or EDITOR environment variable, see manual
-#set -g status-keys vi
-#set -g mode-keys vi
+# status settings
+set -g status-justify  left
+set -g status-position bottom
 
+# BINDS
 
 # replace C-a by C-b instead of using both prefixes
 set -gu prefix2
@@ -357,36 +361,58 @@ unbind C-b
 set -g prefix C-b
 bind C-b send-prefix #!important
 
-# if you don't want Oh my tmux! to alter a binding, use #!important
-# bind v new-window -c #{pane_current_path} #!important
+# client action
+bind -N "Go to last active session" -n M-^ switch-client -l
+bind -N "Go to next session"        -n M-) switch-client -n
+bind -N "Go to previous session"    -n M-( switch-client -p
+bind -N "Detach the client"         -n M-d detach-client
 
-# move status line to top
-# set -g status-position top
+# session action
+bind -N "Kill the session"          -n M-Q kill-session
+bind -N "Select window 10"          -n M-s choose-session
 
-# reload tmux config
-bind r source-file ~/.tmux.conf
-# skip the confirmation
-bind & kill-window
-bind x kill-pane
-bind Q kill-session
-bind C attach-session -c "#{pane_current_path}"
+# pane actions
+bind -n M-w kill-pane
+bind -N "Zoom the active pane" -n M-z resize-pane -Z
 
-bind L next-window
-bind H previous-window
-bind h select-pane -L
-bind j select-pane -D
-bind k select-pane -U
-bind l select-pane -R
-bind -r g display-popup -d '#{pane_current_path}' -w100% -h100% -E lazygit
-bind -r S display-popup -d '#{pane_current_path}' -E tmux-sessionizer
-bind -r D run-shell tmux-dotfiles
+# window actions
+bind -n M-t new-window
+bind -n M-v split-window   -h
+bind -n M-- split-window   -v
+bind -n M-, command-prompt -I "#W" "rename-window '%%'"
 
-set -g status-justify left
-set-option -g detach-on-destroy off
+# navigation
+bind -N "Go to next window"        -n M-L next-window
+bind -N "Go to previous window"    -n M-H previous-window
+
+bind -N "Select pane below"        -n M-j select-pane   -D
+bind -N "Select pane above"        -n M-k select-pane   -U
+bind -N "Select pane to the right" -n M-l select-pane   -R
+bind -N "Select pane to the left"  -n M-h select-pane   -L
+
+bind -N "Select window 1"          -n M-1 select-window -t 1
+bind -N "Select window 2"          -n M-2 select-window -t 2
+bind -N "Select window 3"          -n M-3 select-window -t 3
+bind -N "Select window 4"          -n M-4 select-window -t 4
+bind -N "Select window 5"          -n M-5 select-window -t 5
+bind -N "Select window 6"          -n M-6 select-window -t 6
+bind -N "Select window 7"          -n M-7 select-window -t 7
+bind -N "Select window 8"          -n M-8 select-window -t 8
+bind -N "Select window 9"          -n M-9 select-window -t 9
+bind -N "Select window 10"         -n M-0 select-window -t 10
+
+# open scripts
+bind -N "Open lazygit popup"          -n M-g display-popup -d '#{pane_current_path}' -w100% -h100% -E lazygit
+bind -N "Open tmux-sessionizer popup" -n M-S display-popup -d '#{pane_current_path}' -E     tmux-sessionizer
+bind -N "Run tmux-dotfiles"           -n M-D run-shell     tmux-dotfiles
+bind -N "Enter copy-mode"             -n M-[ copy-mode
+bind -N "Source tmux config"          -n M-r source-file   ~/.tmux.conf
+
+bind -N "Break the current pane into a new window" -n M-T break-pane
 
 # Prompted join-pane
 bind J command-prompt -p "join pane from: "  "join-pane -h -s '%%'"
-bind B set status
+bind -n M-B set status
 
 # -- tpm -----------------------------------------------------------------------
 
