@@ -49,6 +49,8 @@ vim.g.mapleader = " "
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.g.markdown_fenced_languages = { 'html', 'py=python', 'bash=sh', 'R=r', 'sql' }
+
 --vim.cmd.colorscheme("rose-pine")
 -- vim.cmd.colorscheme("catppuccin")
 vim.cmd.colorscheme("tokyonight")

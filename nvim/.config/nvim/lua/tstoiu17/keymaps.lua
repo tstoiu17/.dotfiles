@@ -4,7 +4,7 @@ vim.keymap.set("n", "\\r", ":source<CR>")
 vim.keymap.set("n", "\\s", ":source ~/.dotfiles/nvim/.config/nvim/lua/tstoiu17/plugins.lua<CR>:PackerSync<CR>",
     { desc = "Source plugins => :PackerSync" })
 vim.keymap.set("n", "\\w", ":w<CR>")
-vim.keymap.set("n", "\\W", ":wqa<CR>")
+vim.keymap.set("n", "\\x", ":xa<CR>")
 vim.keymap.set("n", "\\q", ":qa<CR>", { silent = true })
 vim.keymap.set("n", "\\Q", ":qa!<CR>", { silent = true })
 vim.keymap.set("n", "\\t", ":tabclose<CR>", { silent = true })
@@ -33,6 +33,7 @@ vim.keymap.set("v", ">", ">gv")
 -- yank to end of lines
 vim.keymap.set("n", "Y", "y$")
 -- system clipboard
+vim.keymap.set("n", "<leader>Y", ':%y+<cr>', { desc = "[Y]ank entire file to system clipboard" })
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { noremap = false })
 vim.keymap.set({ "n", "v" }, "<leader>p", '"+p', { noremap = false })
 vim.keymap.set({ "n", "v" }, "<leader>P", '"+P', { noremap = false })
