@@ -2,6 +2,7 @@
 
 mkdir -p "$HOME/.config"
 
+# -R to restow
 stow -R alacritty
 stow -R bin
 stow -R i3
