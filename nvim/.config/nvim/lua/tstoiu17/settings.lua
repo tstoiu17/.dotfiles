@@ -1,7 +1,8 @@
-vim.opt.nu = true
-vim.opt.relativenumber = true
+-- vim.opt.nu = true
+-- vim.opt.relativenumber = true
 vim.opt.list = true
-vim.opt.listchars:append("eol:↵,trail:⋅")
+vim.opt.listchars:append("trail:⋅") --  eol:↵,
+vim.opt.conceallevel = 3 -- Hide * markup for bold and italic
 
 vim.opt.errorbells = false
 
@@ -26,11 +27,12 @@ vim.opt.smartcase = true
 -- enable true color
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
+vim.opt.scrolloff = 5
 vim.opt.signcolumn = "yes"
 
 -- Give more space for displaying messages.
---vim.opt.cmdheight = 1
+-- vim.opt.cmdheight = 1
 
 -- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 -- delays and poor user experience.
@@ -43,15 +45,19 @@ vim.opt.shortmess:append("c")
 vim.opt.colorcolumn = "80"
 vim.opt.textwidth = 79
 
+vim.opt.splitbelow = true -- Put new windows below current
+vim.opt.splitright = true -- Put new windows right of current
+vim.opt.winminwidth = 5
+
 vim.g.mapleader = " "
 
 -- disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.g.markdown_fenced_languages = { 'html', 'py=python', 'bash=sh', 'R=r', 'sql' }
+vim.g.markdown_fenced_languages = { 'html', 'py=python', 'bash=sh', 'sh', 'R=r', 'sql' }
 
---vim.cmd.colorscheme("rose-pine")
--- vim.cmd.colorscheme("catppuccin")
 vim.cmd.colorscheme("tokyonight")
---vim.cmd.colorscheme("moonfly")
+-- vim.cmd.colorscheme("rose-pine")
+-- vim.cmd.colorscheme("catppuccin")
+-- vim.cmd.colorscheme("moonfly")

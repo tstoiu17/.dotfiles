@@ -81,6 +81,7 @@ return require("packer").startup(function(use)
         -- or                            , branch = "0.1.x",
         requires = { {"nvim-lua/plenary.nvim"} }
     }
+    use "nvim-telescope/telescope-file-browser.nvim"
     use { "nvim-tree/nvim-tree.lua",
         requires = {
             "nvim-tree/nvim-web-devicons", -- optional, for file icons
@@ -98,16 +99,14 @@ return require("packer").startup(function(use)
     use "tpope/vim-unimpaired"
 
     ------------ UI
-    use { "akinsho/bufferline.nvim",
-        tag = "v3.*", requires = "nvim-tree/nvim-web-devicons"
-    }
+    use "nvim-tree/nvim-web-devicons"
     use "famiu/bufdelete.nvim"
     use { "nvim-lualine/lualine.nvim",
         requires = { "kyazdani42/nvim-web-devicons", opt = true }
     }
     use "stevearc/dressing.nvim"
     use "lukas-reineke/indent-blankline.nvim"
-    use "karb94/neoscroll.nvim"
+    -- use "karb94/neoscroll.nvim"
     use "folke/zen-mode.nvim"
     use { "norcalli/nvim-colorizer.lua",
         config = function()
@@ -127,15 +126,17 @@ return require("packer").startup(function(use)
     --         require("twilight").setup {}
     --     end
     -- }
+    use { "b0o/incline.nvim",
+        config = function()
+            require('incline').setup()
+        end
+    }
 
     ------------ Themes
     use "folke/tokyonight.nvim"
     use { "bluz71/vim-moonfly-colors", branch = "cterm-compat" }
     use { "catppuccin/nvim", as = "catppuccin" }
     use { "rose-pine/neovim", as = "rose-pine" }
-
-    ------------ Useless?
-    use "eandrju/cellular-automaton.nvim"
 
     ------------ Bootstrap
     -- Automatically set up your configuration after cloning packer.nvim

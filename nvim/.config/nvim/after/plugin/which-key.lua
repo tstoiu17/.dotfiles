@@ -1,6 +1,6 @@
 require("which-key").setup {
     window = {
-        border = "single", -- none, single, double, shadow
+        border = "none", -- none, single, double, shadow
     }
     -- your configuration comes here
     -- or leave it empty to use the default settings

@@ -22,6 +22,9 @@ set scroll-step 100
 set zoom-min 10
 set guioptions ""
 
+set window-title-basename "true"
+set statusbar-basename "true"
+
 # ████████╗██╗  ██╗███████╗███╗   ███╗███████╗
 # ╚══██╔══╝██║  ██║██╔════╝████╗ ████║██╔════╝
 #    ██║   ███████║█████╗  ██╔████╔██║█████╗  

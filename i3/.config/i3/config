@@ -28,6 +28,8 @@ default_border pixel 5
 default_floating_border pixel 5
 # hide border if only 1 tile open in workspace
 hide_edge_borders smart
+# only enable gaps on a workspace when there is more than one tile open
+smart_gaps on
 
 focus_follows_mouse no
 
@@ -183,7 +185,7 @@ bindsym $mod+$alt+Shift+9 move container to workspace $ws19
 bindsym $mod+$alt+Shift+0 move container to workspace $ws20
 
 # workspaces on secondary monitor
-workspace $ws2 output HDMI-A-0 
+workspace $ws1 output HDMI-A-0 
 workspace $ws3 output HDMI-A-0 
 workspace $ws4 output HDMI-A-0
 workspace $ws9 output HDMI-A-0
@@ -194,7 +196,7 @@ workspace $ws15 output HDMI-A-0
 workspace $ws20 output HDMI-A-0
 
 # workspaces on laptop (main)
-workspace $ws1 output eDP
+workspace $ws2 output eDP
 workspace $ws5 output eDP
 workspace $ws8 output eDP
 workspace $ws10 output eDP

@@ -108,3 +108,7 @@ alias clip2png="xclip -selection clipboard -t image/png -o >"
 alias za="z *.pdf"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+bats() {
+    BATS_RUN_SKIPPED=true command bats *.bats
+}

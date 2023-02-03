@@ -12,6 +12,8 @@ vim.keymap.set("n", "\\-", ":CellularAutomaton make_it_rain<CR>", { silent = tru
 vim.keymap.set("n", "<leader>h", ":noh<CR>", { silent = true })
 vim.keymap.set({ "n", "v" }, "<leader>=", "mzgg=G`z")
 vim.keymap.set("n", "<leader>m", ":w<CR>:make!<CR><CR>", { silent = true })
+vim.keymap.set("n", "<leader>un", ":set rnu! nu!<cr>", { silent = true, desc = "Toggle line numbers" })
+
 
 vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<cr>")
 vim.keymap.set("n", "<leader>lm", "<cmd>Mason<cr>")
@@ -28,12 +30,13 @@ vim.keymap.set({ "n", "v" }, "g-", "g<C-x>")
 -- keep selected text indented
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
+vim.keymap.set({ "n", "v" }, "<leader>V", "ggVG")
 
 --[[ YANK ]]
 -- yank to end of lines
 vim.keymap.set("n", "Y", "y$")
 -- system clipboard
-vim.keymap.set("n", "<leader>Y", ':%y+<cr>', { desc = "[Y]ank entire file to system clipboard" })
+vim.keymap.set("n", "<leader>Y", ':%y+<cr>', { desc = "[Y]ank file to clipboard" })
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { noremap = false })
 vim.keymap.set({ "n", "v" }, "<leader>p", '"+p', { noremap = false })
 vim.keymap.set({ "n", "v" }, "<leader>P", '"+P', { noremap = false })
@@ -51,3 +54,6 @@ vim.keymap.set("n", "s>", "<C-w>10>")
 vim.keymap.set("n", "s<", "<C-w>10<")
 vim.keymap.set("n", "s+", "<C-w>5+")
 vim.keymap.set("n", "s-", "<C-w>5-")
+
+vim.keymap.set({ "n", "v" }, "<C-u>", "<C-u>zz")
+vim.keymap.set({ "n", "v" }, "<C-d>", "<C-d>zz")

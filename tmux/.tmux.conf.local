@@ -363,8 +363,8 @@ bind C-b send-prefix #!important
 
 # client action
 bind -N "Go to last active session" -n M-^ switch-client -l
-bind -N "Go to next session"        -n M-) switch-client -n
-bind -N "Go to previous session"    -n M-( switch-client -p
+bind -N "Go to next session"        -n M-J switch-client -n
+bind -N "Go to previous session"    -n M-K switch-client -p
 bind -N "Detach the client"         -n M-d detach-client
 
 # session action

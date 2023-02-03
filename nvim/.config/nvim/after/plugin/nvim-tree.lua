@@ -1,7 +1,7 @@
-vim.keymap.set("n", "<leader>e", ":NvimTreeFocus<CR>",
-    { silent = true, desc = "open [e]xplorer" })
-vim.keymap.set("n", "\\e", ":NvimTreeClose<CR>",
-    { silent = true, desc = "close [e]xplorer" })
+-- vim.keymap.set("n", "<leader>e", ":NvimTreeFocus<CR>",
+--     { silent = true, desc = "open [e]xplorer" })
+-- vim.keymap.set("n", "\\e", ":NvimTreeClose<CR>",
+--     { silent = true, desc = "close [e]xplorer" })
 
 require("nvim-tree").setup {
     hijack_cursor = true,
