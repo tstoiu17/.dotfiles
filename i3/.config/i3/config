@@ -22,10 +22,10 @@ font pango:Terminus Mono 9
 # font pango:DejaVu Sans Mono 9
 
 gaps inner 10
-gaps outer 10
+gaps outer 4
 
-default_border pixel 5
-default_floating_border pixel 5
+default_border pixel 2
+default_floating_border pixel 2
 # hide border if only 1 tile open in workspace
 hide_edge_borders smart
 # only enable gaps on a workspace when there is more than one tile open
@@ -216,7 +216,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # finds out, if available)
 bar {
         # mode hide
-        # position top
+        position top
         status_command i3status -c ~/.config/i3/i3status/config
 }
 
@@ -286,6 +286,11 @@ mode "$launcher_mode" {
     bindsym Escape mode "default"
 }
 bindsym $mod+o mode "$launcher_mode"
+
+# turn on gaps
+bindsym $mod+g gaps inner all set 10, gaps outer all set 4
+# turn off gaps
+bindsym $mod+Shift+g gaps inner all set 1, gaps outer all set 1
 
 bindsym $mod+Shift+m exec --no-startup-id monitor_above
 
