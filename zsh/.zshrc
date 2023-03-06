@@ -38,6 +38,7 @@ alias dot="cd ~/.dotfiles"
 alias cm="cmatrix"
 alias ab="monitor_above"
 alias down="cd ~/Downloads/"
+alias dirs="dirs -v"
 
 # single letter aliases
 alias a="v ~/.zshrc; exec zsh"
@@ -72,6 +73,7 @@ alias z='zathura --fork'
 alias cl="clear;l"
 alias rp="/home/tudor/.local/bin/run_cmd.sh python3"
 alias dl="cd ~/dl/"
+alias docs="cd ~/docs/"
 alias img="cd ~/img"
 alias repos="cd ~/repos"
 alias grvw="gh repo view --web" # repo web view
@@ -106,6 +108,7 @@ alias pptx2pdf="soffice --headless --convert-to pdf"
 alias nv="v ~/.config/nvim/"
 alias clip2png="xclip -selection clipboard -t image/png -o >"
 alias za="z *.pdf"
+alias caps="setxkbmap -option caps:swapescape"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

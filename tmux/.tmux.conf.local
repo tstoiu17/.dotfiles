@@ -407,6 +407,8 @@ bind -N "Open tmux-sessionizer popup" -n M-S display-popup -d '#{pane_current_pa
 bind -N "Run tmux-dotfiles"           -n M-D run-shell     tmux-dotfiles
 bind -N "Enter copy-mode"             -n M-[ copy-mode
 bind -N "Source tmux config"          -n M-r source-file   ~/.tmux.conf
+set -g @fzf-url-bind 'f'
+
 
 bind -N "Break the current pane into a new window" -n M-T break-pane
 
@@ -454,7 +456,7 @@ tmux_conf_uninstall_plugins_on_reload=true
 #set -g @plugin 'tmux-plugins/tmux-resurrect'
 #set -g @plugin 'tmux-plugins/tmux-continuum'
 #set -g @continuum-restore 'on'
-
+set -g @plugin 'wfxr/tmux-fzf-url'
 
 # -- custom variables ----------------------------------------------------------
 
