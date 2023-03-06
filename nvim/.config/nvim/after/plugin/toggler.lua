@@ -1,6 +1,7 @@
 require("nvim-toggler").setup {
     inverses = {
         ["true"] = "false",
+        ["True"] = "False",
         ["yes"] = "no",
         ["on"] = "off",
         ["left"] = "right",

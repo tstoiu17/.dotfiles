@@ -49,6 +49,17 @@ return require("packer").startup(function(use)
             require("fidget").setup()
         end
     }
+    use {
+        "folke/trouble.nvim",
+        requires = "nvim-tree/nvim-web-devicons",
+        config = function()
+            require("trouble").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    }
 
     ------------ Syntax
     -- Treesitter and friends
@@ -98,6 +109,7 @@ return require("packer").startup(function(use)
     use "junegunn/vim-easy-align"
     use "tpope/vim-unimpaired"
     use "dkarter/bullets.vim"
+
     ------------ UI
     use "nvim-tree/nvim-web-devicons"
     use "famiu/bufdelete.nvim"
@@ -121,15 +133,15 @@ return require("packer").startup(function(use)
     }
     use { "tpope/vim-fugitive" }
     use { "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" }
-    -- use { "folke/twilight.nvim",
-    --     config = function()
-    --         require("twilight").setup {}
-    --     end
-    -- }
     use { "b0o/incline.nvim",
         config = function()
-            require('incline').setup()
+            require("incline").setup()
         end
+    }
+    use "ggandor/leap.nvim"
+    use {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim"
     }
 
     ------------ Themes

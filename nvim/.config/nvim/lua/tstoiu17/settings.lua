@@ -2,7 +2,7 @@
 -- vim.opt.relativenumber = true
 vim.opt.list = true
 vim.opt.listchars:append("trail:⋅") --  eol:↵,
-vim.opt.conceallevel = 3 -- Hide * markup for bold and italic
+-- vim.opt.conceallevel = 2 -- Hide * markup for bold and italic
 
 vim.opt.errorbells = false
 
@@ -55,9 +55,9 @@ vim.g.mapleader = " "
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.g.markdown_fenced_languages = { 'html', 'py=python', 'bash=sh', 'sh', 'R=r', 'sql' }
+vim.g.markdown_fenced_languages = { 'hs=haskell', 'py=python', 'bash=sh', 'sh', 'R=r', 'sql' }
 
-vim.cmd.colorscheme("tokyonight")
+vim.cmd.colorscheme("tokyonight-night")
 -- vim.cmd.colorscheme("rose-pine")
 -- vim.cmd.colorscheme("catppuccin")
 -- vim.cmd.colorscheme("moonfly")
