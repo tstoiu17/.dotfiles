@@ -7,6 +7,9 @@ set selection-clipboard clipboard
 map i recolor
 map I recolor
 
+# like sxiv
+map b toggle_statusbar
+
 # Open document in fit-width mode by default
 set adjust-open "best-fit"
 
