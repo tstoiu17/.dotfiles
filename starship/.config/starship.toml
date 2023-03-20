@@ -1,11 +1,20 @@
-format = '$all'
+format = '$os$all'
 right_format = '$time'
 
 [time]
 disabled = false
 format = '[$time]($style)'
-style = "bold black"
+style = 'bold black'
 use_12hr = true
 
 [character]
-vimcmd_symbol = "[](bold purple)"
+# success: ❯,➜
+# error: ✖,✗
+# vim: 
+success_symbol = '[\$](bold green)'
+error_symbol   = '[\$](bold red)'
+vimcmd_symbol  = '[V](bold blue)'
+
+[os]
+format = "$symbol"
+disabled = false
