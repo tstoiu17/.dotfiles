@@ -6,6 +6,7 @@ require("nvim-toggler").setup {
         ["on"] = "off",
         ["left"] = "right",
         ["up"] = "down",
+        ["top"] = "bottom",
         ["!="] = "==",
     },
 }

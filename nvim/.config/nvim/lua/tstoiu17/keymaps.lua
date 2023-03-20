@@ -29,7 +29,7 @@ bind({ "n", "v" }, "+", "<C-a>")
 bind({ "n", "v" }, "-", "<C-x>")
 bind({ "n", "v" }, "g+", "g<C-a>")
 bind({ "n", "v" }, "g-", "g<C-x>")
--- keep selected text indented
+-- keep text indented selected
 bind("v", "<", "<gv")
 bind("v", ">", ">gv")
 bind({ "n", "v" }, "<leader>V", "ggVG")

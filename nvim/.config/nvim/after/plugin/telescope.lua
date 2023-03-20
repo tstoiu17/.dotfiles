@@ -29,4 +29,5 @@ vim.keymap.set("n", "<leader>sk", builtin.keymaps,              { desc = "[k]eym
 vim.keymap.set("n", "<leader>so", builtin.oldfiles,             { desc = "[o]ldfiles"      })
 vim.keymap.set("n", "<leader>ss", builtin.lsp_document_symbols, { desc = "[s]ymbols"       })
 vim.keymap.set("n", "<leader>sr", builtin.resume,               { desc = "[r]esume"        })
+vim.keymap.set("n", "<leader>sb", builtin.builtin,              { desc = "[b]uiltin (meta)"})
 vim.keymap.set("n", "<leader>e", ":Telescope file_browser<CR>", { desc = "open [e]xplorer" })

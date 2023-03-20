@@ -108,7 +108,7 @@ return require("packer").startup(function(use)
     use { "ziontee113/icon-picker.nvim" }
     use "junegunn/vim-easy-align"
     use "tpope/vim-unimpaired"
-    use "dkarter/bullets.vim"
+    -- use "dkarter/bullets.vim"
 
     ------------ UI
     use "nvim-tree/nvim-web-devicons"
