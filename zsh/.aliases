@@ -16,7 +16,7 @@ alias n="nnn"
 #alias o=
 #alias p=
 alias q="qalc"
-alias r="/home/tudor/.local/bin/run_cmd.sh"
+alias r="run_cmd.sh"
 #alias s=
 alias t="tmux"
 #alias u=
@@ -38,7 +38,7 @@ alias dirs="dirs -v"
 alias wm="$EDITOR ~/.config/i3/config"
 alias wms="$EDITOR ~/.config/i3/i3status/config"
 alias nv="$EDITOR ~/.config/nvim/"
-alias rc="$EDITOR ~/.zshrc"
+alias rc="$EDITOR ~/.zshrc; exec zsh"
 
 alias za="z *.pdf"
 alias exa="exa --group-directories-first"
