@@ -1,9 +1,0 @@
-#!/bin/sh
-
-# force snap to update firefox
-# source: https://itsfoss.com/pending-update-firefox-ubuntu/
-# fixes: annoying "Pending update of 'firefox' snap" notification
-
-sudo killall firefox
-sudo snap refresh
-
