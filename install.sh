@@ -1,16 +1,27 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-mkdir -p "$HOME/.config"
+# install package manager
+sh <(curl -L https://nixos.org/nix/install) --daemon
 
-# -R to restow
-stow -R alacritty
-stow -R bin
-stow -R i3
-stow -R lazygit
-stow -R lvim
-stow -R nvim
-stow -R tmux
-stow -R zsh
-stow -R zathura
-stow -R warpd
-stow -R starship
+nix-env -iA
+    # GUI stuff
+    nixpkgs.i3          \
+    nixpkgs.alacritty   \
+    nixpkgs.warpd       \
+    nixpkgs.gromit-mpx  \
+    # SHELL stuff
+    nixpkgs.git         \
+    nixpkgs.lazygit     \
+    nixpkgs.stow        \
+    nixpkgs.bat         \
+    nixpkgs.visidata    \
+    nixpkgs.tmux        \
+    nixpkgs.neovim      \
+    nixpkgs.du-dust     \
+    nixpkgs.qmk         \
+    nixpkgs.taskwarrior \
+    nixpkgs.vit         \
+    nixpkgs.zathura     \
+    nixpkgs.sxiv        \
+
+
