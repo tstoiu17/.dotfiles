@@ -1,16 +1,16 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 mkdir -p "$HOME/.config"
 
-# -R to restow
-stow -R alacritty
-stow -R bin
-stow -R i3
-stow -R lazygit
-stow -R lvim
-stow -R nvim
-stow -R tmux
-stow -R zsh
-stow -R zathura
-stow -R warpd
-stow -R starship
+stow --restow alacritty
+stow --restow bin
+stow --restow gromit-mpx
+stow --restow i3
+stow --restow lazygit
+stow --restow mpv
+stow --restow nvim
+stow --restow starship
+stow --restow tmux
+stow --restow warpd
+stow --restow zathura
+stow --restow zsh

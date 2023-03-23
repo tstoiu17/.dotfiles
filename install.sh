@@ -10,6 +10,7 @@ nix-env -iA
     nixpkgs.warpd       \
     nixpkgs.gromit-mpx  \
     # SHELL stuff
+    nixpkgs.zsh         \
     nixpkgs.git         \
     nixpkgs.lazygit     \
     nixpkgs.stow        \
@@ -23,5 +24,6 @@ nix-env -iA
     nixpkgs.vit         \
     nixpkgs.zathura     \
     nixpkgs.sxiv        \
+    nixpkgs.starship    \
 
 
