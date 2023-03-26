@@ -1,5 +1,6 @@
--- vim.opt.nu = true
--- vim.opt.relativenumber = true
+vim.opt.nu = true
+vim.opt.relativenumber = true
+vim.opt.cursorline = true
 vim.opt.list = true
 vim.opt.listchars:append("trail:⋅") --  eol:↵,
 -- vim.opt.conceallevel = 2 -- Hide * markup for bold and italic
