@@ -4,20 +4,20 @@ export EDITOR="nvim"
 export LESS='-R'
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
-export NIX_PAGER=cat
+export NIX_PAGER=batcat
 
 # zsh stuff
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 plugins=(git)
 
-source "$HOME/.aliases"
-
 eval "$(starship init zsh)"
 
-[ -f "~/.ghcup/env" ] && source "~/.ghcup/env"
+[ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
+
+[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 
 bats() {
     BATS_RUN_SKIPPED=true command bats *.bats
