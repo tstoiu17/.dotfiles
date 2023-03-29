@@ -15,6 +15,7 @@ nix-env -iA
     nixpkgs.lazygit     \
     nixpkgs.stow        \
     nixpkgs.bat         \
+    nixpkgs.exa         \
     nixpkgs.visidata    \
     nixpkgs.tmux        \
     nixpkgs.neovim      \
