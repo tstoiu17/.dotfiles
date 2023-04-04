@@ -135,7 +135,13 @@ return require("packer").startup(function(use)
     use { "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" }
     use { "b0o/incline.nvim",
         config = function()
-            require("incline").setup()
+            require("incline").setup({
+                hide = {
+                    cursorline = false,
+                    focused_win = true,
+                    only_win = true,
+                },
+            })
         end
     }
     use "ggandor/leap.nvim"

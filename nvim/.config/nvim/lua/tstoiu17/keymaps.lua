@@ -16,6 +16,7 @@ bind("n", "<leader>h", ":noh<CR>", { silent = true })
 bind({ "n", "v" }, "<leader>=", "mzgg=G`z")
 bind("n", "<leader>m", ":w<CR>:make!<CR><CR>", { silent = true })
 bind("n", "<leader>un", ":set rnu! nu!<cr>", { silent = true, desc = "Toggle line numbers" })
+bind("n", "<leader>ur", ":set rnu!<cr>", { silent = true, desc = "Toggle relative line numbers" })
 
 bind("n", "<leader>li", "<cmd>LspInfo<cr>")
 bind("n", "<leader>lm", "<cmd>Mason<cr>")

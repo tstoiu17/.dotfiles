@@ -50,4 +50,4 @@ on_close = function()
 end,
 }
 
-vim.keymap.set("n", "<leader>Z", ":ZenMode<CR>", { silent = true, desc = "[Z]enMode" })
+vim.keymap.set("n", "<leader>uz", ":ZenMode<CR>", { silent = true, desc = "[z]enMode" })
