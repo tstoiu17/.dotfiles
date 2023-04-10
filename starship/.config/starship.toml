@@ -11,10 +11,13 @@ use_12hr = true
 # success: ❯,➜
 # error: ✖,✗
 # vim: 
-success_symbol = '[\$](bold green)'
-error_symbol   = '[\$](bold red)'
-vimcmd_symbol  = '[V](bold blue)'
+# success_symbol = '[\$](bold green)'
+success_symbol = '[❯](bold green)'
+# error_symbol   = '[\$](bold red)'
+error_symbol   = '[❯](bold red)'
+# vimcmd_symbol  = '[V](bold blue)'
+vimcmd_symbol  = '[](bold blue)'
 
 [os]
 format = "$symbol"
-disabled = false
+disabled = true

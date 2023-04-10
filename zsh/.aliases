@@ -72,6 +72,7 @@ alias ipy="ipython --TerminalInteractiveShell.editing_mode=vi"
 alias jl="jupyter lab"
 
 # tmux
+alias ta="tmux attach"
 alias tk="tmux kill-session -t" # -t requires a name so press TAB to select from active sessions
 alias ts="tmux-sessionizer"
 alias td="tmux-dotfiles"
