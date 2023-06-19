@@ -49,7 +49,7 @@ battery all {
 
 tztime local {
         # uses strftime
-        format = "%l:%M:%S %Y-%m-%d"
+        format = "%H:%M:%S %Y-%m-%d %A"
 }
 
 #cpu_temperature 0 {

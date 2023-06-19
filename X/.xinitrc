@@ -1,4 +1,4 @@
-xset s off
-xset dpms off
+xset s off -dpms
 xsetroot -solid "#000000"
+setxkbmap -option caps:swapescape
 exec i3
