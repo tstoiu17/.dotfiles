@@ -16,7 +16,7 @@ gui:
     optionsTextColor:
       - blue
     selectedLineBgColor:
-      - black # set to `default` to have no background colour
+      - gray # set to `default` to have no background colour
     selectedRangeBgColor:
       - blue
     cherryPickedCommitBgColor:
@@ -43,7 +43,7 @@ gui:
 git:
   paging:
     colorArg: always
-    pager: delta --dark --paging=never
+      #pager: delta --dark --paging=never
   commit:
     signOff: false
     verbose: false
