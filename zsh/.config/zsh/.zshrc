@@ -11,14 +11,6 @@ autoload -Uz compinit
 compinit
 
 ### FUNCTIONS ###
-d() {
-    FILES=(.zshenv .zprofile .zshrc .zlogin)
-    CHOICE=$(printf "%s\n" ${FILES[@]} | fzf)
-    if [ -n $CHOICE ]; then
-	nvim $ZDOTDIR/$CHOICE
-	exec zsh
-    fi
-}
 
 ### ALIASES ###
 alias rc="nvim $ZDOTDIR/.zshrc; exec zsh"
@@ -33,6 +25,7 @@ alias v='nvim'
 alias h='history'
 alias z='zathura --fork'
 alias n='nnn -A -H'
+alias d="edit-dotfiles"
 
 # directory navigation
 alias dot="cd ~/.dotfiles; cl"
@@ -48,7 +41,6 @@ alias clip="xclip -selection c"
 alias ts="tmux-sessionizer"
 alias td="tmux-dotfiles"
 alias clip2png="xclip -selection clipboard -t image/png -o >"
-alias caps="setxkbmap -option caps:swapescape"
 alias tree="tree -C"
 
 alias edp="xrandr --output eDP --auto --output HDMI-A-0 --off"
