@@ -3,7 +3,7 @@ export HISTSIZE=1000000000
 export SAVEHIST=1000000000
 export KEYTIMEOUT=1
 bindkey -v
-setopt autocd
+#setopt autocd
 zstyle :compinstall filename "$ZDOTDIR/.zshrc"
 zstyle ':completion:*' menu select
 bindkey '^[[Z' reverse-menu-complete
@@ -31,7 +31,6 @@ alias ll='ls -laa'
 alias cat='bat'
 alias v='nvim'
 alias h='history'
-alias g='lazygit'
 alias z='zathura --fork'
 alias n='nnn -A -H'
 
@@ -50,5 +49,10 @@ alias td="tmux-dotfiles"
 alias clip2png="xclip -selection clipboard -t image/png -o >"
 alias caps="setxkbmap -option caps:swapescape"
 alias tree="tree -C"
+
+alias edp="xrandr --output eDP --auto --output HDMI-A-0 --off"
+alias hdmi="xrandr --output eDP --off --output HDMI-A-0 --auto"
+alias wm="$EDITOR ~/.config/i3/config"
+alias nf="neofetch"
 
 eval "$(starship init zsh)"

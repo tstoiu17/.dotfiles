@@ -10,20 +10,72 @@ window:
   # padding:
   #   x: 8
 
+##### Hack #####
+#font:
+#  size: 16
+#  normal:
+#    family: Hack Nerd Font
+#    style: Regular
+#  bold:
+#    family: Hack Nerd Font
+#    style: Bold
+#  italic:
+#    family: Hack Nerd Font
+#    style: Italic
+#  bold_italic:
+#    family: Hack Nerd Font
+#    style: Bold Italic
+
+
+##### FiraCode #####
+#font:
+#  size: 16
+#  normal:
+#    family: FiraCode Nerd Font
+#    style: Regular
+#  bold:
+#    family: FiraCode Nerd Font
+#    style: Bold
+#  italic:
+#    family: FiraCode Nerd Font
+#    style: Italic
+#  bold_italic:
+#    family: FiraCode Nerd Font
+#    style: Bold Italic
+
+
+##### Iosevka #####
+#font:
+#  size: 16
+#  normal:
+#    family: Iosevka Nerd Font
+#    style: Regular
+#  bold:
+#    family: Iosevka Nerd Font
+#    style: Bold
+#  italic:
+#    family: Iosevka Nerd Font
+#    style: Italic
+#  bold_italic:
+#    family: Iosevka Nerd Font
+#    style: Bold Italic
+
+
+##### JetBrainsMono #####
 font:
-  size: 14
-    #  normal:
-    #    family: Hack NF
-    #    style: Regular
-    #  bold:
-    #    family: Hack NF
-    #    style: Bold
-    #  italic:
-    #    family: Hack NF
-    #    style: Italic
-    #  bold_italic:
-    #    family: Hack NF
-    #    style: Bold Italic
+  size: 15
+  normal:
+    family: JetBrainsMono Nerd Font
+    style: Regular
+  bold:
+    family: JetBrainsMono Nerd Font
+    style: Bold
+  italic:
+    family: JetBrainsMono Nerd Font
+    style: Italic
+  bold_italic:
+    family: JetBrainsMono Nerd Font
+    style: Bold Italic
 
 
 # key_bindings:
