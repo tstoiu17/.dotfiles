@@ -36,6 +36,7 @@ alias n='nnn -A -H'
 
 # directory navigation
 alias dot="cd ~/.dotfiles; cl"
+alias bin="cd ~/.local/bin; cl"
 alias dl="cd ~/dl; cl"
 alias repos="cd ~/repos; cl"
 alias docs="cd ~/docs; cl"
@@ -54,5 +55,6 @@ alias edp="xrandr --output eDP --auto --output HDMI-A-0 --off"
 alias hdmi="xrandr --output eDP --off --output HDMI-A-0 --auto"
 alias wm="$EDITOR ~/.config/i3/config"
 alias nf="neofetch"
+alias i="sudo pacman -S"
 
 eval "$(starship init zsh)"

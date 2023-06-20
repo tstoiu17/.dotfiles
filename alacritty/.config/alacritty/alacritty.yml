@@ -10,6 +10,7 @@ window:
   # padding:
   #   x: 8
 
+
 ##### Hack #####
 #font:
 #  size: 16
@@ -63,7 +64,7 @@ window:
 
 ##### JetBrainsMono #####
 font:
-  size: 15
+  size: 14
   normal:
     family: JetBrainsMono Nerd Font
     style: Regular
