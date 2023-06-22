@@ -48,5 +48,6 @@ alias hdmi="xrandr --output eDP --off --output HDMI-A-0 --auto"
 alias wm="$EDITOR ~/.config/i3/config"
 alias nf="neofetch"
 alias i="sudo pacman -S"
+alias py="python"
 
 eval "$(starship init zsh)"
