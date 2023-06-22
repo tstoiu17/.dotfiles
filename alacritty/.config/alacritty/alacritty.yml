@@ -11,8 +11,8 @@ window:
   #   x: 8
 
 
-##### Hack #####
-#font:
+# ##### Hack #####
+# font:
 #  size: 16
 #  normal:
 #    family: Hack Nerd Font
@@ -28,8 +28,8 @@ window:
 #    style: Bold Italic
 
 
-##### FiraCode #####
-#font:
+# ##### FiraCode #####
+# font:
 #  size: 16
 #  normal:
 #    family: FiraCode Nerd Font
@@ -45,8 +45,8 @@ window:
 #    style: Bold Italic
 
 
-##### Iosevka #####
-#font:
+# ##### Iosevka #####
+# font:
 #  size: 16
 #  normal:
 #    family: Iosevka Nerd Font

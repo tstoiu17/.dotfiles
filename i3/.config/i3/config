@@ -60,7 +60,6 @@ bindsym $mod+Shift+z focus child
 bindsym $alt+space exec --no-startup-id dmenu_run
 bindsym $mod+d kill
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+b exec firefox
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -122,9 +121,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        # mode hide
-        position bottom
-        status_command i3status -c ~/.config/i3/i3status/config
+    # mode hide
+    position bottom
+    status_command i3status -c ~/.config/i3/i3status/config
 }
 
 # resize window (you can also use the mouse for that)
@@ -187,6 +186,7 @@ set $launcher_mode Launch: [d]iscord, [s]potify
 mode "$launcher_mode" {
     bindsym d exec discord, mode "default"
     bindsym s exec spotify, mode "default"
+    bindsym b exec firefox, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -195,9 +195,11 @@ mode "$launcher_mode" {
 bindsym $mod+o mode "$launcher_mode"
 
 # turn on gaps
-bindsym $mod+g gaps inner all set 10, gaps outer all set 4
+bindsym $mod+g       gaps inner all set 10, gaps outer all set 4
 # turn off gaps
-bindsym $mod+Shift+g gaps inner all set 1, gaps outer all set 1
+bindsym $mod+Shift+g gaps inner all set 1,  gaps outer all set 1
+bindsym $mod+b       bar mode dock
+bindsym $mod+Shift+b bar mode invisible
 
 # region capture screenshot to clipboard
 bindsym $mod+Shift+s exec --no-startup-id maim --select --hidecursor | xclip -selection clipboard -t image/png
