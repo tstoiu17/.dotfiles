@@ -58,7 +58,4 @@ vim.g.loaded_netrwPlugin = 1
 
 vim.g.markdown_fenced_languages = { 'hs=haskell', 'py=python', 'bash=sh', 'sh', 'R=r', 'sql' }
 
-vim.cmd.colorscheme("tokyonight-night")
--- vim.cmd.colorscheme("rose-pine")
--- vim.cmd.colorscheme("catppuccin")
--- vim.cmd.colorscheme("moonfly")
+vim.cmd.colorscheme("moonfly")

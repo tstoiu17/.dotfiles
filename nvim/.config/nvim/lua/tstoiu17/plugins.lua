@@ -153,9 +153,11 @@ return require("packer").startup(function(use)
 
     ------------ Themes
     use "folke/tokyonight.nvim"
-    use { "bluz71/vim-moonfly-colors", branch = "cterm-compat" }
     use { "catppuccin/nvim", as = "catppuccin" }
     use { "rose-pine/neovim", as = "rose-pine" }
+    -- (almost) black bg
+    use { "bluz71/vim-moonfly-colors", branch = "cterm-compat" }
+    use "kvrohit/mellow.nvim"
 
     ------------ Bootstrap
     -- Automatically set up your configuration after cloning packer.nvim

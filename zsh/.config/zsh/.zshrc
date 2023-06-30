@@ -54,6 +54,7 @@ zle -N down-line-or-beginning-search
 autoload -Uz compinit
 compinit
 #setopt autocd
+setopt HIST_IGNORE_DUPS
 zstyle :compinstall filename "$ZDOTDIR/.zshrc"
 zstyle ':completion:*' menu yes select
 # bind shift-tab to move selection in reverse
@@ -71,6 +72,7 @@ alias l='ls -l'
 alias ll='ls -laa'
 alias cat='bat'
 alias v='nvim'
+alias vo="nvim '+Telescope oldfiles'"
 alias h='history'
 alias z='zathura --fork'
 alias n='nnn -A -H'
@@ -98,5 +100,6 @@ alias wm="$EDITOR ~/.config/i3/config"
 alias nf="neofetch"
 alias i="sudo pacman -S"
 alias py="python"
+alias tldr="$BROWSER https://tldr.inbrowser.app"
 
 eval "$(starship init zsh)"

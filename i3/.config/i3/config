@@ -1,9 +1,9 @@
 # i3 config file (v4)
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
-set $mod Mod4
+set $super Mod4
 set $alt Mod1
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+# Use Mouse+$super to drag floating windows to their wanted position
+floating_modifier $super
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -29,37 +29,43 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@   +5%    && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@   -5%    && $refresh_i3status
-bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute   @DEFAULT_SINK@   toggle && $refresh_i3status
-bindsym $mod+comma           exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-bindsym $mod+v               exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@   25%    && $refresh_i3status
-
+bindsym XF86AudioRaiseVolume  exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@   +5%    && $refresh_i3status
+bindsym XF86AudioLowerVolume  exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@   -5%    && $refresh_i3status
+bindsym XF86AudioMute         exec --no-startup-id pactl set-sink-mute   @DEFAULT_SINK@   toggle && $refresh_i3status
+bindsym $super+comma          exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym $super+v              exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@   25%    && $refresh_i3status
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl -q set +10% &
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q set 10%- &
 
+bindsym $super+h       focus  left
+bindsym $super+j       focus  down
+bindsym $super+k       focus  up
+bindsym $super+l       focus  right
+bindsym $super+Shift+h move   left
+bindsym $super+Shift+j move   down
+bindsym $super+Shift+k move   up
+bindsym $super+Shift+l move   right
+bindsym $super+$alt+h  resize shrink width  10 px or 10 ppt
+bindsym $super+$alt+j  resize grow   height 10 px or 10 ppt
+bindsym $super+$alt+k  resize shrink height 10 px or 10 ppt
+bindsym $super+$alt+l  resize grow   width  10 px or 10 ppt
 
-bindsym $mod+h       focus left
-bindsym $mod+j       focus down
-bindsym $mod+k       focus up
-bindsym $mod+l       focus right
-bindsym $mod+Shift+h move  left
-bindsym $mod+Shift+j move  down
-bindsym $mod+Shift+k move  up
-bindsym $mod+Shift+l move  right
+bindsym $super+f fullscreen toggle
+bindsym $super+q layout stacking
+bindsym $super+w layout tabbed
+bindsym $super+e layout toggle split
+bindsym $super+a split vertical
+bindsym $super+s split horizontal
+bindsym $super+z split toggle
 
-bindsym $mod+f fullscreen toggle
-bindsym $mod+q layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
-bindsym $mod+Shift+a focus parent
-bindsym $mod+Shift+z focus child
+bindsym $super+Shift+space floating toggle
+bindsym $super+space focus mode_toggle
+bindsym $super+Shift+a focus parent
+bindsym $super+Shift+z focus child
 bindsym $alt+space exec --no-startup-id dmenu_run
-bindsym $mod+d kill
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $super+d kill
+bindsym $super+Return exec i3-sensible-terminal
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -74,12 +80,35 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+# switch to workspace
+bindsym $super+1      workspace $ws1
+bindsym $super+2      workspace $ws2
+bindsym $super+3      workspace $ws3
+bindsym $super+4      workspace $ws4
+bindsym $super+5      workspace $ws5
+bindsym $super+6      workspace $ws6
+bindsym $super+7      workspace $ws7
+bindsym $super+8      workspace $ws8
+bindsym $super+9      workspace $ws9
+bindsym $super+0      workspace $ws10
+bindsym $super+Tab    workspace back_and_forth
+# move focused container to workspace
+bindsym $super+Shift+1 move container to workspace $ws1
+bindsym $super+Shift+2 move container to workspace $ws2
+bindsym $super+Shift+3 move container to workspace $ws3
+bindsym $super+Shift+4 move container to workspace $ws4
+bindsym $super+Shift+5 move container to workspace $ws5
+bindsym $super+Shift+6 move container to workspace $ws6
+bindsym $super+Shift+7 move container to workspace $ws7
+bindsym $super+Shift+8 move container to workspace $ws8
+bindsym $super+Shift+9 move container to workspace $ws9
+bindsym $super+Shift+0 move container to workspace $ws10
+
 # workspaces on secondary monitor
 workspace $ws1 output HDMI-A-0 
 workspace $ws3 output HDMI-A-0 
 workspace $ws4 output HDMI-A-0
 workspace $ws9 output HDMI-A-0
-
 # workspaces on laptop (main)
 workspace $ws2 output eDP
 workspace $ws5 output eDP
@@ -87,125 +116,66 @@ workspace $ws8 output eDP
 workspace $ws10 output eDP
 
 assign [class="discord"] workspace $ws5
-# for_window [class="Spotify"] move to workspace $ws10
 
-# switch to workspace
-bindsym $mod+1      workspace $ws1
-bindsym $mod+2      workspace $ws2
-bindsym $mod+3      workspace $ws3
-bindsym $mod+4      workspace $ws4
-bindsym $mod+5      workspace $ws5
-bindsym $mod+6      workspace $ws6
-bindsym $mod+7      workspace $ws7
-bindsym $mod+8      workspace $ws8
-bindsym $mod+9      workspace $ws9
-bindsym $mod+0      workspace $ws10
-bindsym $mod+Tab    workspace back_and_forth
+bindsym $super+Shift+c reload
+bindsym $super+Shift+r restart
+bindsym $super+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
+# region capture screenshot to clipboard
+bindsym $super+Shift+s exec --no-startup-id maim --select --hidecursor | xclip -selection clipboard -t image/png
+# region capture screenshot to file
+bindsym $super+Ctrl+Shift+s exec --no-startup-id maim --select --hidecursor ~/img/$(date +%s).png
 
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym --release $super+c exec xcolor -s clipboard
+
+# Mode for locking, exiting, restart, etc.
+set $system_mode System [x] lock, [e] logout, [s] suspend, [h] hibernate, [r] reboot, [Shift+s] shutdown
+mode "$system_mode" {
+    bindsym $super+x exec --no-startup-id i3exit lock,      mode "default"
+    bindsym e        exec --no-startup-id i3exit logout,    mode "default"
+    bindsym s        exec --no-startup-id i3exit suspend,   mode "default"
+    bindsym h        exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r        exec --no-startup-id i3exit reboot,    mode "default"
+    bindsym Shift+s  exec --no-startup-id i3exit shutdown,  mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $super+x mode "$system_mode"
+
+# Mode for picking tablet screen
+set $tablet_mode Tablet display: [h] HDMI, [l] laptop
+mode "$tablet_mode" {
+    bindsym h exec --no-startup-id tablet_display.sh HDMI-A-0, mode "default"
+    bindsym l exec --no-startup-id tablet_display.sh eDP,      mode "default"
+    bindsym Return                                             mode "default"
+    bindsym Escape                                             mode "default"
+}
+bindsym $super+t mode "$tablet_mode"
+
+# Mode for quick launcher frequent apps without a dedicated keybind
+set $launcher_mode Launch: [d]iscord, [b]rowser
+mode "$launcher_mode" {
+    bindsym $super+d exec discord, mode "default"
+    bindsym $super+b exec firefox, mode "default"
+    bindsym Return                 mode "default"
+    bindsym Escape                 mode "default"
+}
+bindsym $super+o mode "$launcher_mode"
+
+# Mode for quick launcher frequent apps without a dedicated keybind
+set $ui_mode UI: [g]aps on, [G]aps off, [b]ar show, [B]ar hide
+mode "$ui_mode" {
+    bindsym $super+b       bar mode dock,                               mode "default"
+    bindsym $super+Shift+b bar mode invisible,                          mode "default"
+    bindsym $super+g       gaps inner all set 10, gaps outer all set 4, mode "default"
+    bindsym $super+Shift+g gaps inner all set 1,  gaps outer all set 1, mode "default"
+}
+bindsym $super+u mode "$ui_mode"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    # mode hide
     position bottom
     status_command i3status -c ~/.config/i3/i3status/config
 }
-
-# resize window (you can also use the mouse for that)
-mode "resize" {
-    # These bindings trigger as soon as you enter the resize mode
-
-    # Pressing left will shrink the window’s width.
-    # Pressing right will grow the window’s width.
-    # Pressing up will shrink the window’s height.
-    # Pressing down will grow the window’s height.
-    bindsym h resize shrink width 10 px or 10 ppt
-    bindsym j resize grow height 10 px or 10 ppt
-    bindsym k resize shrink height 10 px or 10 ppt
-    bindsym l resize grow width 10 px or 10 ppt
-
-    # same bindings, but for the arrow keys
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
-
-    # back to normal: Enter or Escape or $mod+r
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-    bindsym $mod+r mode "default"
-}
-
-bindsym $mod+r mode "resize"
-
-# Mode for locking, exiting, restart, etc.
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
-mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
-
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+x mode "$mode_system"
-
-# Mode for picking tablet screen
-set $tablet_mode Tablet (h) HDMI, (l) laptop
-mode "$tablet_mode" {
-    bindsym h exec --no-startup-id tablet_display.sh HDMI-A-0, mode "default"
-    bindsym l exec --no-startup-id tablet_display.sh eDP, mode "default"
-
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+t mode "$tablet_mode"
-
-# Mode for quick launcher frequent apps without a dedicated keybind
-set $launcher_mode Launch: [d]iscord, [s]potify
-mode "$launcher_mode" {
-    bindsym d exec discord, mode "default"
-    bindsym s exec spotify, mode "default"
-    bindsym b exec firefox, mode "default"
-
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+o mode "$launcher_mode"
-
-# turn on gaps
-bindsym $mod+g       gaps inner all set 10, gaps outer all set 4
-# turn off gaps
-bindsym $mod+Shift+g gaps inner all set 1,  gaps outer all set 1
-bindsym $mod+b       bar mode dock
-bindsym $mod+Shift+b bar mode invisible
-
-# region capture screenshot to clipboard
-bindsym $mod+Shift+s exec --no-startup-id maim --select --hidecursor | xclip -selection clipboard -t image/png
-# region capture screenshot to file
-bindsym $mod+Ctrl+Shift+s exec --no-startup-id maim --select --hidecursor ~/img/$(date +%s).png
-
-bindsym --release $mod+c exec xcolor -s
-# bindsym $mod+z      exec gromit-mpx --toggle
-# bindsym $mod+Ctrl+z exec gromit-mpx --visibility
