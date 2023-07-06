@@ -37,11 +37,11 @@ key[Shift-Tab]="${terminfo[kcbt]}"
 # Finally, make sure the terminal is in application mode, when zle is
 # active. Only then are the values from $terminfo valid.
 if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
-	autoload -Uz add-zle-hook-widget
-	function zle_application_mode_start { echoti smkx }
-	function zle_application_mode_stop { echoti rmkx }
-	add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
-	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
+    autoload -Uz add-zle-hook-widget
+    function zle_application_mode_start { echoti smkx }
+    function zle_application_mode_stop { echoti rmkx }
+    add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
+    add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
 
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
@@ -77,6 +77,8 @@ alias h='history'
 alias z='zathura --fork'
 alias n='nnn -A -H'
 alias d="edit-dotfiles"
+alias p="pass"
+alias pc="pass -c"
 
 # directory navigation
 alias dot="cd ~/.dotfiles; cl"
@@ -93,12 +95,13 @@ alias ts="tmux-sessionizer"
 alias td="tmux-dotfiles"
 alias clip2png="xclip -selection clipboard -t image/png -o >"
 alias tree="tree -C"
-
 alias edp="xrandr --output eDP --auto --output HDMI-A-0 --off"
 alias hdmi="xrandr --output eDP --off --output HDMI-A-0 --auto"
 alias wm="$EDITOR ~/.config/i3/config"
 alias nf="neofetch"
-alias i="sudo pacman -S"
+alias pacman="pacman --config $HOME/.config/pacman.conf"
+alias paru="paru --config $HOME/.config/pacman.conf"
+alias i="paru -S"
 alias py="python"
 alias tldr="$BROWSER https://tldr.inbrowser.app"
 
