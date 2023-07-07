@@ -25,3 +25,5 @@ sudo -u $username paru -S --needed - < ./pkglist.txt
 
 # a better sh
 ln -sf dash /bin/sh
+cd /home/$username
+mkdir dl docs img vid repos
