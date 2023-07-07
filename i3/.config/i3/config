@@ -162,6 +162,7 @@ mode "$open_mode" {
 }
 bindsym $super+o mode "$open_mode"
 bindsym $super+p exec passmenu
+bindsym $super+m exec xrandr --auto
 
 # Mode for quick launcher frequent apps without a dedicated keybind
 set $ui_mode UI: [g]aps on, [G]aps off, [s]tatus show, [S]tatus hide

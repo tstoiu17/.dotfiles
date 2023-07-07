@@ -6,4 +6,5 @@ export MANPAGER='nvim +Man!'
 export READER="zathura"
 export BROWSER="firefox"
 export LESS='-R'
-export NIX_PAGER=batcat
+export XDG_CONFIG_HOME="$HOME/.config"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
