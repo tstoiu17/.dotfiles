@@ -12,7 +12,7 @@ sudo -u $username git clone https://aur.archlinux.org/paru.git
 cd paru
 sudo -u $username makepkg -si
 cd ..
-rm -rf paru
+sudo -u $username rm -rf paru
 
 # clone dotfiles
 sudo -u $username git clone https://github.com/tstoiu17/.dotfiles.git
@@ -21,7 +21,7 @@ cd .dotfiles
 sudo -u $username ./stow.sh
 
 # install pkgs
-paru -S --needed - < ./pkglist.txt
+sudo -u $username paru -S --needed - < ./pkglist.txt
 
 # a better sh
 ln -sf dash /bin/sh
