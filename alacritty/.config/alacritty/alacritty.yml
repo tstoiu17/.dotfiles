@@ -62,37 +62,37 @@ window:
 #    style: Bold Italic
 
 
-# ##### JetBrainsMono #####
-# font:
-#   size: 14
-#   normal:
-#     family: JetBrainsMono Nerd Font
-#     style: Regular
-#   bold:
-#     family: JetBrainsMono Nerd Font
-#     style: Bold
-#   italic:
-#     family: JetBrainsMono Nerd Font
-#     style: Italic
-#   bold_italic:
-#     family: JetBrainsMono Nerd Font
-#     style: Bold Italic
-
-##### CaskaydiaCove #####
+##### JetBrainsMono #####
 font:
   size: 12
   normal:
-    family: CaskaydiaCove Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Regular
   bold:
-    family: CaskaydiaCove Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Bold
   italic:
-    family: CaskaydiaCove Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Italic
   bold_italic:
-    family: CaskaydiaCove Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Bold Italic
+
+# ##### CaskaydiaCove #####
+# font:
+#   size: 12
+#   normal:
+#     family: CaskaydiaCove Nerd Font
+#     style: Regular
+#   bold:
+#     family: CaskaydiaCove Nerd Font
+#     style: Bold
+#   italic:
+#     family: CaskaydiaCove Nerd Font
+#     style: Italic
+#   bold_italic:
+#     family: CaskaydiaCove Nerd Font
+#     style: Bold Italic
 
 # key_bindings:
   # - { key: Key1, mods: Alt, chars: "\x02\x31" }
