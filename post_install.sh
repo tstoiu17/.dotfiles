@@ -3,6 +3,7 @@
 pacman -S --needed base-devel git neovim zsh stow
 username="tudor"
 useradd --create-home --groups wheel --shell /usr/bin/zsh $username
+echo 'export ZDOTDIR="$XDG_CONFIG_HOME/zsh"' >> /etc/zsh/zshenv
 passwd $username
 echo "%wheel ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers
 
