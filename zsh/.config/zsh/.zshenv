@@ -8,4 +8,3 @@ export BROWSER="firefox"
 export LESS='-R'
 export XDG_CONFIG_HOME="$HOME/.config"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-echo "source ~/.zshenv"
