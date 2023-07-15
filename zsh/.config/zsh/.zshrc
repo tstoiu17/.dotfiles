@@ -65,6 +65,10 @@ pkgsync() {
     paru -S --needed - < $HOME/.dotfiles/pkglist.txt
 }
 
+pkgsave() {
+    pacman -Qeq > $HOME/.dotfiles/pkglist.txt
+}
+
 pkgdiff() {
     nvim -d $HOME/.dotfiles/pkglist.txt <(pacman -Qeq)
 }
