@@ -75,3 +75,18 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+(map! :desc "Increment number"
+      :nv "+" #'evil-numbers/inc-at-pt)
+(map! :desc "Increment number"
+      :nv "g +" #'evil-numbers/inc-at-pt-incremental)
+(map! :desc "Decrement number"
+      :nv "-" #'evil-numbers/dec-at-pt)
+(map! :desc "Decrement number"
+      :nv "g -" #'evil-numbers/dec-at-pt-incremental)
+
+;; TODO map "\ w" to :w
+;;      basically replicate functionality of the \ as a localleader that i have in my nvim config
+;; TODO map "s" to C-w for window actions
+;; TODO map "backspace" to go up one level in which-key
+;; TODO map which-key paging binds to something
