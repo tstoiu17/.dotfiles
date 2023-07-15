@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 pacman -S --needed base-devel git neovim zsh stow
 username="tudor"

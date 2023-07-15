@@ -156,8 +156,9 @@ set $open_mode open: [d]iscord, [b]rowser, [i]mages, [f]iles
 mode "$open_mode" {
     bindsym $super+d exec discord, mode "default"
     bindsym $super+b exec firefox, mode "default"
-    bindsym $super+i exec sxiv -rt /home/tudor/img, mode "default"
+    bindsym $super+i exec sxiv -rt $HOME/img, mode "default"
     bindsym $super+f exec alacritty -e nnn, mode "default"
+    bindsym $super+e exec emacs, mode "default"
     bindsym Escape mode "default"
 }
 bindsym $super+o mode "$open_mode"
