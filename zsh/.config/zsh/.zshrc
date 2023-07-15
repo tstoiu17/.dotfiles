@@ -61,6 +61,13 @@ zstyle ':completion:*' menu yes select
 bindkey '^[[Z' reverse-menu-complete
 
 ### FUNCTIONS ###
+pkgsync() {
+    paru -S --needed - < $HOME/.dotfiles/pkglist.txt
+}
+
+pkgdiff() {
+    nvim -d $HOME/.dotfiles/pkglist.txt <(pacman -Qeq)
+}
 
 ### ALIASES ###
 alias rc="nvim $ZDOTDIR/.zshrc; exec zsh"
@@ -101,7 +108,6 @@ alias wm="$EDITOR ~/.config/i3/config"
 alias nf="neofetch"
 alias pacman="pacman --config $HOME/.config/pacman.conf"
 alias paru="paru --config $HOME/.config/pacman.conf"
-alias pkgsync="paru -S --needed - < $HOME/.dotfiles/pkglist.txt"
 alias i="paru -S"
 alias py="python"
 alias tldr="$BROWSER https://tldr.inbrowser.app"
