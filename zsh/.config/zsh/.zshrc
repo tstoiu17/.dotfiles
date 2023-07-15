@@ -70,7 +70,7 @@ pkgsave() {
 }
 
 pkgdiff() {
-    nvim -d $HOME/.dotfiles/pkglist.txt <(pacman -Qeq)
+    nvim -d <(pacman -Qeq) $HOME/.dotfiles/pkglist.txt
 }
 
 ### ALIASES ###
