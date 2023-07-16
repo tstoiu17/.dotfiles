@@ -97,6 +97,7 @@ alias bin="cd ~/.local/bin; cl"
 alias dl="cd ~/dl; cl"
 alias repos="cd ~/repos; cl"
 alias docs="cd ~/docs; cl"
+alias books="cd ~/books; cl"
 alias img="cd ~/img; cl"
 alias dirs="dirs -v"
 
