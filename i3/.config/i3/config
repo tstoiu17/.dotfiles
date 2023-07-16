@@ -152,7 +152,7 @@ mode "$tablet_mode" {
 bindsym $super+t mode "$tablet_mode"
 
 # Mode to open programs
-set $open_mode open: [d]iscord, [b]rowser, [i]mages, [f]iles
+set $open_mode open: [d]iscord, [b]rowser, [i]mages, [f]iles, [e]macs
 mode "$open_mode" {
     bindsym $super+d exec discord, mode "default"
     bindsym $super+b exec firefox, mode "default"
