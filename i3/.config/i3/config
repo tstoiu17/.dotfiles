@@ -176,7 +176,6 @@ mode "$ui_mode" {
 }
 bindsym $super+u mode "$ui_mode"
 
-# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 bar {
-    status_command i3status
+    status_command i3status -c $XDG_CONFIG_HOME/i3status/$(hostname)_status
 }
