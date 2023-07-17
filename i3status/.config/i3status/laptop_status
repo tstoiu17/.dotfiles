@@ -7,41 +7,51 @@
 # If the above line is not correctly displayed, fix your editor first!
 
 general {
+    markup = pango
     colors = true
+    color_good =      "#00ff00"
+    color_degraded =  "#dd9933"
+    color_bad =       "#aa5566"
+    color_separator = "#00ffff"
     interval = 5
 }
 
-order += "ipv6"
+order += "volume master"
 order += "wireless _first_"
 order += "battery all"
-order += "disk /"
-order += "load"
 order += "memory"
+# order += "disk /"
 order += "tztime local"
 
+volume master {
+    format = "<span color='#00ffff'>󰕾 %volume</span>"
+    format_muted = "<i><span color='#FF0000'>MUTED %volume</span></i>"
+}
+
 wireless _first_ {
-    format_up = "W: (%quality at %essid) %ip"
-    format_down = "W: down"
+    format_up = "󰖩 %essid %quality"
+    format_down = "󰖩 down"
 }
 
 battery all {
-    format = "%status %percentage %remaining"
+    format = "%status %percentage <span color='gray'>%consumption</span>"
+    status_chr = "⚡"
+    status_bat = "🔋"
+    status_full = "💯"
+    low_threshold = "20"
+    integer_battery_capacity = "true"
 }
 
 disk "/" {
-    format = "%avail"
-}
-
-load {
-    format = "%1min"
+    format = "💽 %used <span color='gray'>%percentage_used</span>"
 }
 
 memory {
-    format = "%used | %available"
+    format = "MEM %used <span color='gray'>%percentage_used</span>"
     threshold_degraded = "1G"
-    format_degraded = "MEMORY < %available"
+    format_degraded = "MEM < %available"
 }
 
 tztime local {
-    format = "%Y-%m-%d %H:%M:%S"
+    format = "📆 %Y-%m-%d %H:%M:%S %A"
 }

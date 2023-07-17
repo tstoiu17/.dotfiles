@@ -4,17 +4,17 @@ DOTFILES_DIR="$HOME/.dotfiles"
 
 # select stow package
 STOW_PKG=$(find "$DOTFILES_DIR" \
-	-mindepth 1 -maxdepth 1 \
-	-name .git -prune -o \
-	-type d -printf "%P\n" \
-	| fzf --cycle)
+    -mindepth 1 -maxdepth 1 \
+    -name .git -prune -o \
+    -type d -printf "%P\n" \
+    | fzf --cycle -0 -1 --query="$1")
 # exit if nothing was selected
 test -z $STOW_PKG && exit 0
 
 # select config file from stow package
 FILE=$(find "$DOTFILES_DIR/$STOW_PKG" \
-	-mindepth 1 \
-	-type f -printf "%P\n" \
-	| fzf --cycle)
+    -mindepth 1 \
+    -type f -printf "%P\n" \
+    | fzf --cycle -0 -1 --query="$2")
 
 $EDITOR $DOTFILES_DIR/$STOW_PKG/$FILE
