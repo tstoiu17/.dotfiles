@@ -73,6 +73,11 @@ pkgdiff() {
     nvim -d <(pacman -Qeq) $HOME/.dotfiles/pkglist.txt
 }
 
+nv() {
+    cd "$XDG_CONFIG_HOME/nvim"
+    nvim
+    cd - > /dev/null
+}
 ### ALIASES ###
 alias rc="nvim $ZDOTDIR/.zshrc; exec zsh"
 alias e='exit'

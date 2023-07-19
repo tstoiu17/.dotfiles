@@ -5,6 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("1a1ac598737d0fcdc4dfab3af3d6f46ab2d5048b8e72bc22f50271fd6d393a00" default))
+ '(package-selected-packages '(rainbow-mode))
  '(safe-local-variable-values '((elisp-autofmt-load-packages-local "evil-macros"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

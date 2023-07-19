@@ -11,7 +11,7 @@ general {
     colors = true
     color_good =      "#00ff00"
     color_degraded =  "#dd9933"
-    color_bad =       "#aa5566"
+    color_bad =       "#FF0000"
     color_separator = "#00ffff"
     interval = 5
 }
@@ -37,9 +37,12 @@ battery all {
     format = "%status %percentage <span color='gray'>%consumption</span>"
     status_chr = "⚡"
     status_bat = "🔋"
+    status_unk = "❓"
     status_full = "💯"
     low_threshold = "20"
+    threshold_type = "percentage"
     integer_battery_capacity = "true"
+    last_full_capacity = false
 }
 
 disk "/" {
@@ -47,11 +50,11 @@ disk "/" {
 }
 
 memory {
-    format = "MEM %used <span color='gray'>%percentage_used</span>"
+    format = "<span color='orange'>MEM</span> %used <span color='gray'>%percentage_used</span>"
     threshold_degraded = "1G"
-    format_degraded = "MEM < %available"
+    format_degraded = "<span color='orange'>MEM</span> < %available"
 }
 
 tztime local {
-    format = "📆 %Y-%m-%d %H:%M:%S %A"
+    format = "📆 %F %R %A W%U"
 }

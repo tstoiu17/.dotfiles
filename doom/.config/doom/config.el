@@ -7,6 +7,7 @@
 (setq which-key-idle-delay 0.5)
 (setq which-key-idle-secondary-delay 0.05)
 (setq which-key-use-C-h-commands t)
+(setq which-key-side-window-max-height 0.75)
 
 (map!
  :desc "Increment number" :nv "+" #'evil-numbers/inc-at-pt
