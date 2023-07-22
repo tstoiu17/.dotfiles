@@ -181,5 +181,5 @@ mode "$ui_mode" {
 bindsym $super+u mode "$ui_mode"
 
 bar {
-    status_command i3status -c $XDG_CONFIG_HOME/i3status/$(hostname)_status
+    status_command i3status -c $XDG_CONFIG_HOME/i3/$(hostname)_status
 }

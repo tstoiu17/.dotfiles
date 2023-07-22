@@ -1,4 +1,4 @@
--- START BOOTSTRAP ------------------------------------------------------------
+-- {{{ BOOTSTRAP
 -- Returns true if packer was not found and also clones it, false if packer
 -- already exists
 local ensure_packer = function()
@@ -12,13 +12,11 @@ local ensure_packer = function()
     return false
 end
 local packer_bootstrap = ensure_packer()
--- END BOOTSTRAP --------------------------------------------------------------
+-- }}}
 
 return require("packer").startup(function(use)
     use "wbthomason/packer.nvim"
-
-    ------------ Language stuff
-    -- LSP
+    -- {{{ LSP
     use { "VonHeikemen/lsp-zero.nvim",
         requires = {
             -- LSP Support
@@ -61,9 +59,8 @@ return require("packer").startup(function(use)
             }
         end
     }
-
-    ------------ Syntax
-    -- Treesitter and friends
+    -- }}}
+    -- {{{ Syntax
     use { "nvim-treesitter/nvim-treesitter",
         run = function()
             local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
@@ -87,8 +84,8 @@ return require("packer").startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
     use { "nguyenvukhang/nvim-toggler" }
-
-    ------------ Functionality
+    -- }}} 
+    -- {{{ Functionality
     use { "nvim-telescope/telescope.nvim", tag = "0.1.0",
         -- or                            , branch = "0.1.x",
         requires = { {"nvim-lua/plenary.nvim"} }
@@ -125,7 +122,6 @@ return require("packer").startup(function(use)
         },
         config = function()
             require("autolist").setup()
-
             vim.keymap.set("i", "<tab>", "<cmd>AutolistTab<cr>")
             vim.keymap.set("i", "<s-tab>", "<cmd>AutolistShiftTab<cr>")
             vim.keymap.set("i", "<c-t>", "<c-t><cmd>AutolistRecalculate<cr>") -- an example of using <c-t> to indent
@@ -133,15 +129,12 @@ return require("packer").startup(function(use)
             vim.keymap.set("n", "o", "o<cmd>AutolistNewBullet<cr>")
             vim.keymap.set("n", "O", "O<cmd>AutolistNewBulletBefore<cr>")
             vim.keymap.set("n", "<CR>", "<cmd>AutolistToggleCheckbox<cr><CR>")
-
             -- cycle list types with dot-repeat
             vim.keymap.set("n", "<leader>cn", require("autolist").cycle_next_dr, { expr = true })
             vim.keymap.set("n", "<leader>cp", require("autolist").cycle_prev_dr, { expr = true })
-
             -- if you don't want dot-repeat
             -- vim.keymap.set("n", "<leader>cn", "<cmd>AutolistCycleNext<cr>")
             -- vim.keymap.set("n", "<leader>cp", "<cmd>AutolistCycleNext<cr>")
-
             -- functions to recalculate list on edit
             vim.keymap.set("n", ">>", ">><cmd>AutolistRecalculate<cr>")
             vim.keymap.set("n", "<<", "<<<cmd>AutolistRecalculate<cr>")
@@ -149,8 +142,8 @@ return require("packer").startup(function(use)
             vim.keymap.set("v", "d", "d<cmd>AutolistRecalculate<cr>")
         end,
     }
-
-    ------------ UI
+    -- }}}
+    -- {{{ UI
     use "nvim-tree/nvim-web-devicons"
     use "famiu/bufdelete.nvim"
     use { "nvim-lualine/lualine.nvim",
@@ -189,19 +182,27 @@ return require("packer").startup(function(use)
         "folke/todo-comments.nvim",
         requires = "nvim-lua/plenary.nvim"
     }
-
-    ------------ Themes
+    use {
+        "folke/noice.nvim",
+        requires = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+        }
+    }
+    -- }}}
+    -- {{{ Themes
     use "folke/tokyonight.nvim"
     use { "catppuccin/nvim", as = "catppuccin" }
     use { "rose-pine/neovim", as = "rose-pine" }
     -- (almost) black bg
     use { "bluz71/vim-moonfly-colors", branch = "cterm-compat" }
     use "kvrohit/mellow.nvim"
-
-    ------------ Bootstrap
+    -- }}}
+    -- {{{ Bootstrap
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
         require("packer").sync()
     end
+    -- }}}
 end)

@@ -1,6 +1,6 @@
 local bind = vim.keymap.set
 
--- [[ ACTIONS ]]
+-- {{{ ACTIONS
 -- source file
 bind("n", "\\s", ":source<CR>")
 bind("n", "\\ps", ":source ~/.dotfiles/nvim/.config/nvim/lua/tstoiu17/plugins.lua<CR>:PackerSync<CR>",
@@ -19,14 +19,15 @@ bind("n", "<leader>un", ":set relativenumber! number!<cr>", { silent = true, des
 bind("n", "<leader>ur", ":set relativenumber!<cr>",         { silent = true, desc = "Toggle relative line numbers" })
 bind("n", "<leader>uc", ":set cursorcolumn!<cr>",           { silent = true, desc = "Toggle cursor column" })
 bind("n", "<leader>ul", ":set cursorline!<cr>",             { silent = true, desc = "Toggle cursorline" })
-
+-- }}}
+-- {{{ LSP
 bind("n", "<leader>li", "<cmd>LspInfo<cr>")
 bind("n", "<leader>lm", "<cmd>Mason<cr>")
 bind("n", "<leader>lf", "<cmd>LspZeroFormat<cr>")
 bind("n", "<leader>ls", "<cmd>LspStop<cr>")
 bind("n", "<leader>lS", "<cmd>LspStart<cr>")
-
--- [[ EDITING ]]
+-- }}}
+-- {{{ EDITING
 -- increment/decrement
 bind({ "n", "v" }, "+", "<C-a>")
 bind({ "n", "v" }, "-", "<C-x>")
@@ -36,8 +37,8 @@ bind({ "n", "v" }, "g-", "g<C-x>")
 bind("v", "<", "<gv")
 bind("v", ">", ">gv")
 bind({ "n", "v" }, "<leader>V", "ggVG")
-
---[[ YANK ]]
+-- }}}
+-- {{{ YANK 
 -- yank to end of lines
 bind("n", "Y", "y$")
 -- system clipboard
@@ -49,16 +50,15 @@ bind({ "n", "v" }, "<leader>P", '"+P', { noremap = false })
 bind({ "n", "v" }, "<leader>x", '"_x')
 -- paste from last yank
 bind({ "n", "v" }, "gp", '"0p')
-
---[[ WINDOWS ]]
--- pretty much replacing the <C-w> prefix for window maps with "s"
--- because everything s can do can be done with c
+-- }}}
+-- {{{ MOVEMENT
+-- replacing 's' with <C-w> prefix for window maps
 bind("n", "s", "<C-w>")
 -- Resize window
 bind("n", "s>", "<C-w>10>")
 bind("n", "s<", "<C-w>10<")
 bind("n", "s+", "<C-w>5+")
 bind("n", "s-", "<C-w>5-")
-
 bind({ "n", "v" }, "<C-u>", "<C-u>zz")
 bind({ "n", "v" }, "<C-d>", "<C-d>zz")
+-- }}}

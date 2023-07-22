@@ -9,12 +9,15 @@ STOW_PKG=$(find "$DOTFILES_DIR" \
     -type d -printf "%P\n" \
     | fzf --cycle -0 -1 --query="$1")
 # exit if nothing was selected
-test -z $STOW_PKG && exit 0
+test -z "$STOW_PKG" && exit 0
+cd "$DOTFILES_DIR/$STOW_PKG" || exit
+$EDITOR "$DOTFILES_DIR"/"$STOW_PKG"
+cd - > /dev/null || exit
 
-# select config file from stow package
-FILE=$(find "$DOTFILES_DIR/$STOW_PKG" \
-    -mindepth 1 \
-    -type f -printf "%P\n" \
-    | fzf --cycle -0 -1 --query="$2")
-
-$EDITOR $DOTFILES_DIR/$STOW_PKG/$FILE
+# # select config file from stow package
+# FILE=$(find "$DOTFILES_DIR/$STOW_PKG" \
+#     -mindepth 1 \
+#     -type f -printf "%P\n" \
+#     | fzf --cycle -0 -1 --query="$2")
+#
+# $EDITOR $DOTFILES_DIR/$STOW_PKG/$FILE

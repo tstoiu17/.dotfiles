@@ -85,7 +85,7 @@ _G.packer_plugins = {
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["autolist.nvim"] = {
-    config = { "\27LJ\2\nã\a\0\0\a\0$\0i6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0'\2\6\0'\3\a\0'\4\b\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0'\2\6\0'\3\t\0'\4\n\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0'\2\6\0'\3\v\0'\4\f\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0'\2\r\0'\3\14\0'\4\15\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0'\2\r\0'\3\16\0'\4\17\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0'\2\r\0'\3\v\0'\4\18\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0'\2\r\0'\3\19\0'\4\20\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0'\2\r\0'\3\21\0006\4\0\0'\6\1\0B\4\2\0029\4\22\0045\5\23\0B\0\5\0016\0\3\0009\0\4\0009\0\5\0'\2\r\0'\3\24\0006\4\0\0'\6\1\0B\4\2\0029\4\25\0045\5\26\0B\0\5\0016\0\3\0009\0\4\0009\0\5\0'\2\r\0'\3\27\0'\4\28\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0'\2\r\0'\3\29\0'\4\30\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0'\2\r\0'\3\31\0'\4 \0B\0\4\0016\0\3\0009\0\4\0009\0\5\0'\2!\0'\3\"\0'\4#\0B\0\4\1K\0\1\0\"d<cmd>AutolistRecalculate<cr>\6d\6v#dd<cmd>AutolistRecalculate<cr>\add#<<<cmd>AutolistRecalculate<cr>\a<<#>><cmd>AutolistRecalculate<cr>\a>>\1\0\1\texpr\2\18cycle_prev_dr\15<leader>cp\1\0\1\texpr\2\18cycle_next_dr\15<leader>cn!<cmd>AutolistRecalculate<cr>\n<C-r>(<cmd>AutolistToggleCheckbox<cr><CR>&O<cmd>AutolistNewBulletBefore<cr>\6O o<cmd>AutolistNewBullet<cr>\6o\6n#<CR><cmd>AutolistNewBullet<cr>\t<CR>\30<cmd>AutolistShiftTab<cr>\f<s-tab>\25<cmd>AutolistTab<cr>\n<tab>\6i\bset\vkeymap\bvim\nsetup\rautolist\frequire\0" },
+    config = { "\27LJ\2\nê\a\0\0\a\0$\0i6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0'\2\6\0'\3\a\0'\4\b\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0'\2\6\0'\3\t\0'\4\n\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0'\2\6\0'\3\v\0'\4\f\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0'\2\6\0'\3\r\0'\4\14\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0'\2\15\0'\3\16\0'\4\17\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0'\2\15\0'\3\18\0'\4\19\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0'\2\15\0'\3\r\0'\4\20\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0'\2\15\0'\3\21\0006\4\0\0'\6\1\0B\4\2\0029\4\22\0045\5\23\0B\0\5\0016\0\3\0009\0\4\0009\0\5\0'\2\15\0'\3\24\0006\4\0\0'\6\1\0B\4\2\0029\4\25\0045\5\26\0B\0\5\0016\0\3\0009\0\4\0009\0\5\0'\2\15\0'\3\27\0'\4\28\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0'\2\15\0'\3\29\0'\4\30\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0'\2\15\0'\3\31\0'\4 \0B\0\4\0016\0\3\0009\0\4\0009\0\5\0'\2!\0'\3\"\0'\4#\0B\0\4\1K\0\1\0\"d<cmd>AutolistRecalculate<cr>\6d\6v#dd<cmd>AutolistRecalculate<cr>\add#<<<cmd>AutolistRecalculate<cr>\a<<#>><cmd>AutolistRecalculate<cr>\a>>\1\0\1\texpr\2\18cycle_prev_dr\15<leader>cp\1\0\1\texpr\2\18cycle_next_dr\15<leader>cn(<cmd>AutolistToggleCheckbox<cr><CR>&O<cmd>AutolistNewBulletBefore<cr>\6O o<cmd>AutolistNewBullet<cr>\6o\6n#<CR><cmd>AutolistNewBullet<cr>\t<CR>&<c-t><cmd>AutolistRecalculate<cr>\n<c-t>\30<cmd>AutolistShiftTab<cr>\f<s-tab>\25<cmd>AutolistTab<cr>\n<tab>\6i\bset\vkeymap\bvim\nsetup\rautolist\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -165,7 +165,7 @@ _G.packer_plugins = {
     url = "https://github.com/ziontee113/icon-picker.nvim"
   },
   ["incline.nvim"] = {
-    config = { "\27LJ\2\no\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\thide\1\0\0\1\0\3\16focused_win\2\15cursorline\1\ronly_win\2\nsetup\fincline\frequire\0" },
+    config = { "\27LJ\2\no\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\thide\1\0\0\1\0\3\ronly_win\2\16focused_win\2\15cursorline\1\nsetup\fincline\frequire\0" },
     loaded = true,
     path = "/home/tudor/.local/share/nvim/site/pack/packer/start/incline.nvim",
     url = "https://github.com/b0o/incline.nvim"
@@ -220,6 +220,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tudor/.local/share/nvim/site/pack/packer/start/neodev.nvim",
     url = "https://github.com/folke/neodev.nvim"
+  },
+  ["noice.nvim"] = {
+    loaded = true,
+    path = "/home/tudor/.local/share/nvim/site/pack/packer/start/noice.nvim",
+    url = "https://github.com/folke/noice.nvim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/home/tudor/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-autopairs"] = {
     config = { "\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
@@ -366,6 +376,30 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: fidget.nvim
+time([[Config for fidget.nvim]], true)
+try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
+time([[Config for fidget.nvim]], false)
+-- Config for: lsp_signature.nvim
+time([[Config for lsp_signature.nvim]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18lsp_signature\frequire\0", "config", "lsp_signature.nvim")
+time([[Config for lsp_signature.nvim]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14colorizer\frequire\0", "config", "nvim-colorizer.lua")
+time([[Config for nvim-colorizer.lua]], false)
+-- Config for: incline.nvim
+time([[Config for incline.nvim]], true)
+try_loadstring("\27LJ\2\no\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\thide\1\0\0\1\0\3\ronly_win\2\16focused_win\2\15cursorline\1\nsetup\fincline\frequire\0", "config", "incline.nvim")
+time([[Config for incline.nvim]], false)
+-- Config for: nvim-surround
+time([[Config for nvim-surround]], true)
+try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
+time([[Config for nvim-surround]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
@@ -374,34 +408,10 @@ time([[Config for nvim-autopairs]], false)
 time([[Config for orgmode]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\forgmode\frequire\0", "config", "orgmode")
 time([[Config for orgmode]], false)
--- Config for: lsp_signature.nvim
-time([[Config for lsp_signature.nvim]], true)
-try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18lsp_signature\frequire\0", "config", "lsp_signature.nvim")
-time([[Config for lsp_signature.nvim]], false)
--- Config for: fidget.nvim
-time([[Config for fidget.nvim]], true)
-try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
-time([[Config for fidget.nvim]], false)
--- Config for: incline.nvim
-time([[Config for incline.nvim]], true)
-try_loadstring("\27LJ\2\no\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\thide\1\0\0\1\0\3\16focused_win\2\15cursorline\1\ronly_win\2\nsetup\fincline\frequire\0", "config", "incline.nvim")
-time([[Config for incline.nvim]], false)
 -- Config for: trouble.nvim
 time([[Config for trouble.nvim]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
 time([[Config for trouble.nvim]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14colorizer\frequire\0", "config", "nvim-colorizer.lua")
-time([[Config for nvim-colorizer.lua]], false)
--- Config for: nvim-surround
-time([[Config for nvim-surround]], true)
-try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
-time([[Config for nvim-surround]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
@@ -411,11 +421,11 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'autolist.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType text ++once lua require("packer.load")({'autolist.nvim'}, { ft = "text" }, _G.packer_plugins)]]
+vim.cmd [[au FileType tex ++once lua require("packer.load")({'autolist.nvim'}, { ft = "tex" }, _G.packer_plugins)]]
 vim.cmd [[au FileType plaintex ++once lua require("packer.load")({'autolist.nvim'}, { ft = "plaintex" }, _G.packer_plugins)]]
 vim.cmd [[au FileType norg ++once lua require("packer.load")({'autolist.nvim'}, { ft = "norg" }, _G.packer_plugins)]]
-vim.cmd [[au FileType text ++once lua require("packer.load")({'autolist.nvim'}, { ft = "text" }, _G.packer_plugins)]]
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'autolist.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
-vim.cmd [[au FileType tex ++once lua require("packer.load")({'autolist.nvim'}, { ft = "tex" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 
