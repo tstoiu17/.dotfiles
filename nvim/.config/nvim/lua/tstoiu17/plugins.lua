@@ -84,6 +84,7 @@ return require("packer").startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
     use { "nguyenvukhang/nvim-toggler" }
+    use "vim-pandoc/vim-pandoc-syntax"
     -- }}} 
     -- {{{ Functionality
     use { "nvim-telescope/telescope.nvim", tag = "0.1.0",

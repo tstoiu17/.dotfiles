@@ -35,7 +35,8 @@
         "/home/tudor/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
         "/home/tudor/.local/share/nvim/site/pack/packer/start/vim-moonfly-colors",
         "/home/tudor/.local/share/nvim/site/pack/packer/start/which-key.nvim",
-        "${3rd}/luassert/library"
+        "${3rd}/luassert/library",
+        "${3rd}/luv/library"
     ],
     "workspace.checkThirdParty": false
 }
