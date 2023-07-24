@@ -88,11 +88,12 @@ alias cat='bat'
 alias v='nvim'
 alias vo="nvim '+Telescope oldfiles'"
 alias h='history'
-alias z='zathura --fork'
 alias n='nnn -A -H'
+alias o="xdg-open"
 alias d="edit-dotfiles"
 alias p="pass"
 alias pc="pass -c"
+alias z='zathura --fork'
 
 # directory navigation
 alias dot="cd ~/.dotfiles; cl"
@@ -118,8 +119,8 @@ alias pacman="pacman --config $HOME/.config/pacman.conf"
 alias paru="paru --config $HOME/.config/pacman.conf"
 alias i="paru -S"
 alias py="python"
-alias tldr="$BROWSER https://tldr.inbrowser.app"
-alias nerd="$BROWSER https://www.nerdfonts.com/cheat-sheet"
+alias tldr="o https://tldr.inbrowser.app"
+alias nerd="o https://www.nerdfonts.com/cheat-sheet"
 # }}}
 # {{{ setup third-party tools
 eval "$(starship init zsh)"

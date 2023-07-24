@@ -134,7 +134,7 @@ bindsym $super+Ctrl+Shift+s exec --no-startup-id maim --select --hidecursor ~/im
 bindsym --release $super+c exec xcolor -s clipboard
 
 # Mode for locking, exiting, restart, etc.
-set $system_mode System [x] lock, [e] logout, [s] suspend, [h] hibernate, [r] reboot, [Shift+s] shutdown
+set $system_mode System [l]ogout, [s]uspend, [h]ibernate, [r]eboot, [S]hutdown
 mode "$system_mode" {
     bindsym $super+x exec --no-startup-id i3exit lock,      mode "default"
     bindsym e        exec --no-startup-id i3exit logout,    mode "default"
@@ -147,7 +147,7 @@ mode "$system_mode" {
 bindsym $super+x mode "$system_mode"
 
 # Mode for picking tablet screen
-set $tablet_mode Tablet display: [h] HDMI, [l] laptop
+set $tablet_mode Tablet display: [h]dmi, [l]aptop
 mode "$tablet_mode" {
     bindsym h exec --no-startup-id tablet_display.sh HDMI-A-0, mode "default"
     bindsym l exec --no-startup-id tablet_display.sh eDP,      mode "default"
