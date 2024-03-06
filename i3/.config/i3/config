@@ -13,13 +13,14 @@ font pango:JetBrainsMono Nerd Font SemiBold 12
 gaps inner 10
 gaps outer 4
 
-default_border          pixel 6
-default_floating_border pixel 6
+default_border          pixel 2
+default_floating_border pixel 2
 # hide border if only 1 tile open in workspace
 hide_edge_borders smart
 # only enable gaps on a workspace when there is more than one tile open
 smart_gaps on
 focus_follows_mouse no
+popup_during_fullscreen smart
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -58,14 +59,15 @@ bindsym $super+w layout tabbed
 bindsym $super+e layout toggle split
 bindsym $super+a split vertical
 bindsym $super+s split horizontal
-bindsym $super+z split toggle
+# bindsym $super+z split toggle
 
 bindsym $super+Shift+space floating toggle
 bindsym $super+space focus mode_toggle
 bindsym $super+Shift+a focus parent
 bindsym $super+Shift+z focus child
 bindsym $super+d kill
-bindsym $alt+space exec --no-startup-id dmenu_run
+# bindsym $alt+space exec --no-startup-id dmenu_run
+bindsym $alt+space exec --no-startup-id $HOME/.config/rofi/launchers/type-2/launcher.sh
 bindsym $super+Return exec alacritty
 
 # Define names for default workspaces for which we configure key bindings later on.
@@ -109,8 +111,8 @@ bindsym $super+Shift+9     move container to workspace $ws9
 bindsym $super+Shift+0     move container to workspace $ws10
 
 # workspaces on secondary monitor
-workspace $ws0 output HDMI-A-0 
-workspace $ws1 output HDMI-A-0 
+workspace $ws0 output HDMI-A-0
+workspace $ws1 output HDMI-A-0
 workspace $ws4 output HDMI-A-0
 workspace $ws9 output HDMI-A-0
 # workspaces on laptop (main)
@@ -121,17 +123,33 @@ workspace $ws8 output eDP
 workspace $ws10 output eDP
 
 assign [class="discord"] workspace $ws5
+for_window [class="floating"] floating enabled
 
 bindsym $super+Shift+c reload
 bindsym $super+Shift+r restart
 bindsym $super+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # region capture screenshot to clipboard
-bindsym $super+Shift+s exec --no-startup-id maim --select --hidecursor | xclip -selection clipboard -t image/png
+# bindsym $super+Shift+s exec --no-startup-id maim --select --hidecursor | xclip -selection clipboard -t image/png
 # region capture screenshot to file
-bindsym $super+Ctrl+Shift+s exec --no-startup-id maim --select --hidecursor ~/img/$(date +%s).png
-
-bindsym --release $super+c exec xcolor -s clipboard
+# bindsym $super+Ctrl+Shift+s exec --no-startup-id maim --select --hidecursor ~/img/$(date +%s).png
+bindsym $super+p exec passmenu
+bindsym $super+i exec rofi -modi emoji -show emoji
+bindsym $super+m exec xrandr --auto --output HDMI-A-0 --primary --output eDP --off
+bindsym $super+Shift+m exec xrandr --auto --output HDMI-A-0 --above eDP --output eDP --primary
+bindsym $super+n exec xrandr --auto
+bindsym $super+b exec --no-startup-id boomer
+bindsym $super+Shift+b border toggle
+# bindsym --release $super+c exec xcolor -s clipboard
+bindsym $super+c exec copyq show
+bindsym $super+Ctrl+c exec conserve_ideapad_battery.sh
+bindsym $super+Shift+s exec --no-startup-id flameshot gui
+bindsym $super+Ctrl+Shift+s exec --no-startup-id flameshot gui --clipboard --accept-on-select
+bindsym $super+bracketleft exec dunstctl history-pop
+bindsym $super+bracketright exec dunstctl close
+bindsym $super+z exec org-capture
+bindsym $super+semicolon scratchpad show
+bindsym $super+Shift+semicolon move scratchpad
 
 # Mode for locking, exiting, restart, etc.
 set $system_mode System [l]ogout, [s]uspend, [h]ibernate, [r]eboot, [S]hutdown
@@ -161,13 +179,16 @@ mode "$open_mode" {
     bindsym $super+d exec discord, mode "default"
     bindsym $super+b exec firefox, mode "default"
     bindsym $super+i exec sxiv -rt $HOME/img, mode "default"
-    bindsym $super+f exec alacritty -e nnn, mode "default"
-    bindsym $super+e exec emacsclient -c -a "emacs --daemon", mode "default"
+    bindsym $super+f exec alacritty -e "nnn", mode "default"
+    bindsym $super+p exec alacritty -e "ipython", mode "default"
+    # bindsym $super+e exec emacsclient -c -a "emacs --daemon", mode "default"
+    bindsym $super+e exec emacs $HOME/org/all.org, mode "default"
+    bindsym $super+a exec anki, mode "default"
+    # bindsym $super+n exec alacritty -e "nvim" --class floating, mode "default"
+    bindsym $super+w exec start_warpd.sh, mode "default"
     bindsym Escape mode "default"
 }
 bindsym $super+o mode "$open_mode"
-bindsym $super+p exec passmenu
-bindsym $super+m exec xrandr.sh
 
 # Mode for quick launcher frequent apps without a dedicated keybind
 set $ui_mode UI: [g]aps on, [G]aps off, [s]tatus show, [S]tatus hide
@@ -180,6 +201,33 @@ mode "$ui_mode" {
 }
 bindsym $super+u mode "$ui_mode"
 
+# class                 border  backgr. text    indicator child_border
+# client.focused          #15a3c7 #15a3c7 #ffffff #2e9ef4   #15a3c7
+# client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+# client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+# client.urgent           #2f343a #900000 #ffffff #900000   #900000
+# client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+# client.background       #ffffff
+
 bar {
+    position top
     status_command i3status -c $XDG_CONFIG_HOME/i3/$(hostname)_status
+    i3bar_command i3bar --transparency
+    colors {
+            background #000000
+            statusline #ffffff
+            separator #666666
+
+            # focused_workspace  #4c7899 #15a3c7 #ffffff
+            # active_workspace   #333333 #5f676a #ffffff
+            # inactive_workspace #333333 #222222 #888888
+            # urgent_workspace   #2f343a #900000 #ffffff
+            # binding_mode       #2f343a #900000 #ffffff
+        }
 }
+
+# bar {
+#     position bottom
+#     workspace_command $XDG_CONFIG_HOME/i3/workspace.sh
+# }
+

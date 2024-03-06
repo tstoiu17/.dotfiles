@@ -25,7 +25,7 @@ order += "tztime local"
 
 volume master {
     format = "<span color='#00ffff'>󰕾 %volume</span>"
-    format_muted = "<span color='#FF0000'>󰖁 %volume</span>>"
+    format_muted = "<span color='#FF0000'>󰖁 %volume</span>"
 }
 
 wireless _first_ {
@@ -42,7 +42,7 @@ battery all {
     low_threshold = "20"
     threshold_type = "percentage"
     integer_battery_capacity = "true"
-    last_full_capacity = false
+    last_full_capacity = true
 }
 
 disk "/" {
@@ -56,5 +56,5 @@ memory {
 }
 
 tztime local {
-    format = "📆 %F %R %A W%U"
+    format = "📆 %a %F %R W%U"
 }
