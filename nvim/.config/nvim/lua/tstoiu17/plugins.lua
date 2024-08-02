@@ -42,12 +42,11 @@ return require("packer").startup(function(use)
             require("lsp_signature").setup()
         end
     }
-    use { "j-hui/fidget.nvim",
-        tag = "legacy",
-        config = function()
-            require("fidget").setup()
-        end
-    }
+    -- use { "j-hui/fidget.nvim",
+    --     config = function()
+    --         require("fidget").setup()
+    --     end
+    -- }
     use {
         "folke/trouble.nvim",
         requires = "nvim-tree/nvim-web-devicons",
@@ -58,6 +57,10 @@ return require("packer").startup(function(use)
                 -- refer to the configuration section below
             }
         end
+    }
+    use {
+        "quarto-dev/quarto-nvim",
+        requires = "jmbuhr/otter.nvim",
     }
     -- }}}
     -- {{{ Syntax
@@ -85,10 +88,10 @@ return require("packer").startup(function(use)
     }
     use { "nguyenvukhang/nvim-toggler" }
     use "vim-pandoc/vim-pandoc-syntax"
+    use "tpope/vim-sleuth"
     -- }}} 
     -- {{{ Functionality
-    use { "nvim-telescope/telescope.nvim", tag = "0.1.0",
-        -- or                            , branch = "0.1.x",
+    use { "nvim-telescope/telescope.nvim", branch = "0.1.x",
         requires = { {"nvim-lua/plenary.nvim"} }
     }
     use "nvim-telescope/telescope-file-browser.nvim"
@@ -104,45 +107,11 @@ return require("packer").startup(function(use)
     use { "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     }
-    use { "ziontee113/icon-picker.nvim" }
+    use "ziontee113/icon-picker.nvim"
     use "junegunn/vim-easy-align"
     use "tpope/vim-unimpaired"
-    use { "nvim-orgmode/orgmode",
-        config = function()
-            require("orgmode").setup({})
-        end
-    }
-    use {
-        "gaoDean/autolist.nvim",
-        ft = {
-            "markdown",
-            "text",
-            "tex",
-            "plaintex",
-            "norg",
-        },
-        config = function()
-            require("autolist").setup()
-            vim.keymap.set("i", "<tab>", "<cmd>AutolistTab<cr>")
-            vim.keymap.set("i", "<s-tab>", "<cmd>AutolistShiftTab<cr>")
-            vim.keymap.set("i", "<c-t>", "<c-t><cmd>AutolistRecalculate<cr>") -- an example of using <c-t> to indent
-            vim.keymap.set("i", "<CR>", "<CR><cmd>AutolistNewBullet<cr>")
-            vim.keymap.set("n", "o", "o<cmd>AutolistNewBullet<cr>")
-            vim.keymap.set("n", "O", "O<cmd>AutolistNewBulletBefore<cr>")
-            vim.keymap.set("n", "<CR>", "<cmd>AutolistToggleCheckbox<cr><CR>")
-            -- cycle list types with dot-repeat
-            vim.keymap.set("n", "<leader>cn", require("autolist").cycle_next_dr, { expr = true })
-            vim.keymap.set("n", "<leader>cp", require("autolist").cycle_prev_dr, { expr = true })
-            -- if you don't want dot-repeat
-            -- vim.keymap.set("n", "<leader>cn", "<cmd>AutolistCycleNext<cr>")
-            -- vim.keymap.set("n", "<leader>cp", "<cmd>AutolistCycleNext<cr>")
-            -- functions to recalculate list on edit
-            vim.keymap.set("n", ">>", ">><cmd>AutolistRecalculate<cr>")
-            vim.keymap.set("n", "<<", "<<<cmd>AutolistRecalculate<cr>")
-            vim.keymap.set("n", "dd", "dd<cmd>AutolistRecalculate<cr>")
-            vim.keymap.set("v", "d", "d<cmd>AutolistRecalculate<cr>")
-        end,
-    }
+    use "ledger/vim-ledger"
+    use "christoomey/vim-tmux-navigator"
     -- }}}
     -- {{{ UI
     use "nvim-tree/nvim-web-devicons"
@@ -150,11 +119,8 @@ return require("packer").startup(function(use)
     use { "nvim-lualine/lualine.nvim",
         requires = { "kyazdani42/nvim-web-devicons", opt = true }
     }
-    use "stevearc/dressing.nvim"
-    use "lukas-reineke/indent-blankline.nvim"
-    -- use "karb94/neoscroll.nvim"
     use "folke/zen-mode.nvim"
-    use { "norcalli/nvim-colorizer.lua",
+    use { "NvChad/nvim-colorizer.lua",
         config = function()
             require("colorizer").setup()
         end
@@ -167,28 +133,21 @@ return require("packer").startup(function(use)
     }
     use { "tpope/vim-fugitive" }
     use { "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" }
-    use { "b0o/incline.nvim",
-        config = function()
-            require("incline").setup({
-                hide = {
-                    cursorline = false,
-                    focused_win = true,
-                    only_win = true,
-                },
-            })
-        end
-    }
-    use "ggandor/leap.nvim"
+    -- use { "b0o/incline.nvim",
+    --     config = function()
+    --         -- require("incline").setup({
+    --         --     hide = {
+    --         --         cursorline = false,
+    --         --         focused_win = false,
+    --         --         only_win = false,
+    --         --     },
+    --         -- })
+    --         -- require("incline").disable()
+    --     end
+    -- }
     use {
         "folke/todo-comments.nvim",
         requires = "nvim-lua/plenary.nvim"
-    }
-    use {
-        "folke/noice.nvim",
-        requires = {
-            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-            "MunifTanjim/nui.nvim",
-        }
     }
     -- }}}
     -- {{{ Themes
@@ -198,7 +157,10 @@ return require("packer").startup(function(use)
     -- (almost) black bg
     use { "bluz71/vim-moonfly-colors", branch = "cterm-compat" }
     use "kvrohit/mellow.nvim"
+    use "rebelot/kanagawa.nvim"
     -- }}}
+
+    vim.cmd.colorscheme("tokyonight-night")
     -- {{{ Bootstrap
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
@@ -207,3 +169,4 @@ return require("packer").startup(function(use)
     end
     -- }}}
 end)
+

@@ -11,4 +11,4 @@ require("nvim-toggler").setup {
     },
 }
 
-vim.keymap.set({ "n", "v" }, "<leader>i", require("nvim-toggler").toggle, { desc = "[I]nvert" })
+-- vim.keymap.set({ "n", "v" }, "<leader>i", require("nvim-toggler").toggle, { desc = "[I]nvert" })

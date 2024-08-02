@@ -1,0 +1,42 @@
+* how nvim works
+** things that are builtin, but need a plugin for usability
+*** treesitter
+the nvim-treesitter plugin allows you to use the functionality already in neovim
+**** install parsers for languages
+**** provide commands to do things with treesitter
+*** lsp
+**** mason: install language servers
+**** mason-lspconfig: bridge (mason <--> lspconfig)
+* my config
+** vanilla vim config
+*** settings
+setting tabstop and other vim.opt
+*** keymaps
+**** design decision: why does this only have mappings for default vim actions
+keymaps for default vim should be separate from plugins and pluging keymaps should be configure together with the plugin spec so that removing a plugin completely (including keybinds) is simple (just delete the spec because everything related to the plugin will be contained in there)
+**** just default vim keybinds
+** plugins
+*** lsp and language-aware stuff (treesitter)
+idk if this is a good category because there are a lot of things that plugins do for lsp, they don't really fit neatly into a category
+**** lspconfig
+**** mason
+**** treesitter
+**** formatting
+***** conform.nvim
+**** commenting
+***** comment.nvim
+**** lsp ui good - should this be under ui
+**** toggler (SPC I) toggles between pairs of strings "true" -> "false"
+*** functionality (general purpose, not language aware)
+**** telescope
+**** harpoon
+**** undotree
+**** TODO a good diff plugin, or learn if the (-d) option is good enough
+**** markdown-preview
+**** vim-tmux-navigator
+**** nvim-surround
+*** ui
+**** gitsigns
+**** symbols-outline.nvim
+**** incline.nvim
+shows the filename in a top corner, so i can have a global status line but still know the filename of a split
