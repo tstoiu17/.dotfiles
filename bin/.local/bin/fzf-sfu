@@ -1,0 +1,33 @@
+#!/bin/sh
+# interactively make requests to the SFU Outlines REST API with fzf
+set -e
+
+url='http://www.sfu.ca/bin/wcm/course-outlines'
+
+count_slashes() {
+    echo "$1" \
+        | tr -cd '/' \
+        | wc -c
+}
+
+request() {
+    local path="$1"
+    curl -s "${url}?${path}" | jq -r '.[].text' \
+        | fzf  --layout=reverse --cycle --height=50% --prompt="?${path}" \
+            --select-1 \
+        | tr '[:upper:]' '[:lower:]'
+}
+
+params="${1%/}"
+# request until params contains 4 '/' (represents a course section)
+
+while [ "$(count_slashes "$params")" -lt 4 ]; do
+    choice=$(request "$params")
+    [ -n "$choice" ] || exit
+    # `%` removes the trailing slashes
+    params="${params%/}/${choice}"
+    # `#` removes the leading slashes
+    params="${params#/}"
+done
+
+curl -s "$url?$params" | jq

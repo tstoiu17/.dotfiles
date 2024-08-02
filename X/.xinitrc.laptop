@@ -1,0 +1,8 @@
+xset s off -dpms
+xsetroot -solid "#000000"
+warpd
+batsignal -b -f 99 -w 25 -c 15 -d 10 -I "$HOME/.local/share/icons/battery_charging_36x36.png"
+dunst &
+copyq &
+flameshot &
+exec i3

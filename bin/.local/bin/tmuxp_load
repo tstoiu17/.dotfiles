@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+selected=$(tmuxp ls | fzf)
+
+# --yes means switch to session instead of appending windows to current session
+tmuxp load --yes "$selected"
