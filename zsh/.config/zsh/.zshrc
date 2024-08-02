@@ -1,6 +1,6 @@
 # {{{ settings
 export HISTFILE="$ZDOTDIR/.history"
-export HISTSIZE=1000000000 
+export HISTSIZE=1000000000
 export SAVEHIST=1000000000
 export KEYTIMEOUT=1
 autoload -Uz compinit
@@ -8,6 +8,7 @@ compinit
 setopt HIST_IGNORE_DUPS
 zstyle :compinstall filename "$ZDOTDIR/.zshrc"
 zstyle ':completion:*' menu yes select
+fpath+=$ZDOTDIR/.zfunc
 
 # }}}
 # {{{ keybinds
@@ -23,7 +24,10 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
     add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
 
-autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+autoload -Uz edit-command-line
+autoload -Uz up-line-or-beginning-search
+autoload -Uz down-line-or-beginning-search
+zle -N edit-command-line
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 # create a zkbd compatible hash;
@@ -56,6 +60,7 @@ bindkey -- "${key[PageDown]}"  end-of-buffer-or-history
 bindkey -- "${key[Shift-Tab]}" reverse-menu-complete
 bindkey -- "${key[Up]}"        up-line-or-beginning-search
 bindkey -- "${key[Down]}"      down-line-or-beginning-search
+bindkey -M vicmd v edit-command-line
 # }}}
 # {{{ functions
 pkgsync() {
@@ -75,25 +80,46 @@ nv() {
     nvim
     cd - > /dev/null
 }
+
+bats() {
+    BATS_RUN_SKIPPED=true command bats *.bats
+}
+
+m() {
+    # if arguments were passed
+    if [ "$#" = 0 ]; then
+        nvim '+Telescope man_pages'
+    else
+        man $*
+    fi
+}
 # }}}
 # {{{ aliases
 alias rc="nvim $ZDOTDIR/.zshrc; exec zsh"
 alias e='exit'
-alias c='clear'
-alias cl='c;l'
-alias ls='exa --group-directories-first'
+alias eza='eza --group-directories-first --sort=extension --icons=auto'
+alias ls='eza'
 alias l='ls -l'
+alias cl='c;l'
+alias c='clear'
 alias ll='ls -laa'
+alias t='eza --tree'
+alias t2='eza --tree --level 2'
 alias cat='bat'
+alias g='lazygit'
 alias v='nvim'
 alias vo="nvim '+Telescope oldfiles'"
 alias h='history'
-alias n='nnn -A -H'
+alias n='nnn'  # see $NNN_OPTS in .zshenv
 alias o="xdg-open"
-alias d="edit-dotfiles"
+alias d="edit_dotfiles"
+alias t="tmuxp_load"
 alias p="pass"
 alias pc="pass -c"
 alias z='zathura --fork'
+alias x="xrandr"
+alias ..="cd .."
+alias -- -="cd -"
 
 # directory navigation
 alias dot="cd ~/.dotfiles; cl"
@@ -107,24 +133,43 @@ alias dirs="dirs -v"
 
 alias cx="chmod +x"
 alias clip="xclip -selection c"
-alias ts="tmux-sessionizer"
-alias td="tmux-dotfiles"
+alias clipo="xclip -selection c -o"
+alias ts="tmux_sessionizer"
+alias td="tmux_dotfiles"
 alias clip2png="xclip -selection clipboard -t image/png -o >"
+alias pptx2pdf="soffice --headless --convert-to pdf"
 alias tree="tree -C"
-alias edp="xrandr --output eDP --auto --output HDMI-A-0 --off"
-alias hdmi="xrandr --output eDP --off --output HDMI-A-0 --auto"
 alias wm="$EDITOR ~/.config/i3/config"
 alias nf="neofetch"
 alias pacman="pacman --config $HOME/.config/pacman.conf"
-alias paru="paru --config $HOME/.config/pacman.conf"
+alias paru="paru --bottomup --config $HOME/.config/pacman.conf"
 alias i="paru -S"
 alias py="python"
+alias ipy="ipython"
 alias tldr="o https://tldr.inbrowser.app"
 alias nerd="o https://www.nerdfonts.com/cheat-sheet"
+alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}"
+alias ip="ip -color=auto"
+alias ex="exercism"
+alias pytest="pytest --no-header"
+
+# git aliases
+alias gst="git status --short --branch"
+alias gc="git commit -v"
+alias ga="git add"
+alias gb="git branch"
+
+alias ff="firefox"
+alias caps="setxkbmap -option caps:escape"
 # }}}
 # {{{ setup third-party tools
 eval "$(starship init zsh)"
-#  ⬇️⬇️ ⬇️⬇️ ⬇️⬇️⬇️  this checks if current shell options contains 'i' (interactive)
+#  vvvvvvvvv  this checks if current shell options contains 'i' (interactive)
 [[ $- == *i* ]] && source "/usr/share/fzf/completion.zsh" 2> /dev/null
-source "/usr/share/fzf/key-bindings.zsh"
+eval "$(direnv hook zsh)"
+# TODO: fix this plugin overriding the fzf CTRL-R history search
+# source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+source /usr/share/fzf/key-bindings.zsh
+[ -f "/home/tudor/.ghcup/env" ] && source "/home/tudor/.ghcup/env"
 # }}}
+

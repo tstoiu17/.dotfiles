@@ -1,77 +1,42 @@
 # i3 config file (v4)
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
-set $super Mod4
-set $alt Mod1
-# Use Mouse+$super to drag floating windows to their wanted position
-floating_modifier $super
+# https://i3wm.org/docs/userguide.html
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-# font pango:DejaVu Sans 12
-font pango:JetBrainsMono Nerd Font SemiBold 12
-
-gaps inner 10
-gaps outer 4
-
-default_border          pixel 2
-default_floating_border pixel 2
-# hide border if only 1 tile open in workspace
-hide_edge_borders smart
-# only enable gaps on a workspace when there is more than one tile open
-smart_gaps on
-focus_follows_mouse no
-popup_during_fullscreen smart
-
+# STARTUP {{{
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+# }}}
 
-# Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume  exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@   +5%    && $refresh_i3status
-bindsym XF86AudioLowerVolume  exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@   -5%    && $refresh_i3status
-bindsym XF86AudioMute         exec --no-startup-id pactl set-sink-mute   @DEFAULT_SINK@   toggle && $refresh_i3status
-bindsym $super+comma          exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-bindsym $super+v              exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@   25%    && $refresh_i3status
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl -q set +10% &
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q set 10%- &
+# VARIABLES {{{
+set $super Mod4
+set $alt Mod1
+# }}}
 
-bindsym $super+h       focus  left
-bindsym $super+j       focus  down
-bindsym $super+k       focus  up
-bindsym $super+l       focus  right
-bindsym $super+Shift+h move   left
-bindsym $super+Shift+j move   down
-bindsym $super+Shift+k move   up
-bindsym $super+Shift+l move   right
-bindsym $super+Ctrl+h  resize shrink width  10 px or 10 ppt
-bindsym $super+Ctrl+j  resize grow   height 10 px or 10 ppt
-bindsym $super+Ctrl+k  resize shrink height 10 px or 10 ppt
-bindsym $super+Ctrl+l  resize grow   width  10 px or 10 ppt
+# SETTINGS {{{
+# Use Mouse+$super to drag floating windows to their wanted position
+floating_modifier $super
+# font for window titles and bar, unless a different font used in the bar block
+font pango:JetBrainsMono Nerd Font SemiBold 12
 
-bindsym $super+f fullscreen toggle
-bindsym $super+q layout stacking
-bindsym $super+w layout tabbed
-bindsym $super+e layout toggle split
-bindsym $super+a split vertical
-bindsym $super+s split horizontal
-# bindsym $super+z split toggle
+for_window [all] title_window_icon on
+default_border pixel 2
+default_floating_border pixel 2
+# hide border if only 1 tile open in workspace
+hide_edge_borders smart
 
-bindsym $super+Shift+space floating toggle
-bindsym $super+space focus mode_toggle
-bindsym $super+Shift+a focus parent
-bindsym $super+Shift+z focus child
-bindsym $super+d kill
-# bindsym $alt+space exec --no-startup-id dmenu_run
-bindsym $alt+space exec --no-startup-id $HOME/.config/rofi/launchers/type-2/launcher.sh
-bindsym $super+Return exec alacritty
+## gaps
+# gaps inner 10
+# gaps outer 4
+# smart_gaps on
 
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
+focus_follows_mouse no
+popup_during_fullscreen smart
+# }}}
+
+# WORKSPACES {{{
 set $ws0 "0"
 set $ws1 "1"
 set $ws2 "2"
@@ -97,6 +62,7 @@ bindsym $super+8      workspace $ws8
 bindsym $super+9      workspace $ws9
 bindsym $super+0      workspace $ws10
 bindsym $super+Tab    workspace back_and_forth
+
 # move focused container to workspace
 bindsym $super+Shift+grave move container to workspace $ws0
 bindsym $super+Shift+1     move container to workspace $ws1
@@ -121,36 +87,109 @@ workspace $ws3 output eDP
 workspace $ws5 output eDP
 workspace $ws8 output eDP
 workspace $ws10 output eDP
+# }}}
 
+# WINDOW SETTINGS {{{
+# to get the class
+#     - run `xprop | grep "WM_CLASS" | sed -r 's/^.*"(.*)"$/\1/'`
+#     - click on the target window
+# example of what the sed command grabs
+#
+# $ echo 'WM_CLASS(STRING) = "instance", "class"' | sed -r 's/^.*"(.*)"$/\1/'
+# class
 assign [class="discord"] workspace $ws5
 for_window [class="floating"] floating enabled
+for_window [class="copyq"] floating enabled
+for_window [title="IPython:"] floating enabled
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+# }}}
 
+# BINDS: VOLUME {{{
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume  exec --no-startup-id \
+    pactl set-sink-volume @DEFAULT_SINK@   +5%    && $refresh_i3status
+bindsym XF86AudioLowerVolume  exec --no-startup-id \
+    pactl set-sink-volume @DEFAULT_SINK@   -5%    && $refresh_i3status
+bindsym XF86AudioMute         exec --no-startup-id \
+    pactl set-sink-mute   @DEFAULT_SINK@   toggle && $refresh_i3status
+# bindsym $super+v              exec --no-startup-id \
+#     pactl set-sink-volume @DEFAULT_SINK@   25%    && $refresh_i3status
+# bindsym $super+comma          exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl -q set +10% &
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q set 10%- &
+# }}}
+
+# BINDS: i3 {{{
 bindsym $super+Shift+c reload
 bindsym $super+Shift+r restart
 bindsym $super+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# region capture screenshot to clipboard
-# bindsym $super+Shift+s exec --no-startup-id maim --select --hidecursor | xclip -selection clipboard -t image/png
-# region capture screenshot to file
-# bindsym $super+Ctrl+Shift+s exec --no-startup-id maim --select --hidecursor ~/img/$(date +%s).png
+bindsym $super+Shift+space floating toggle
+bindsym $super+space focus mode_toggle
+bindsym $super+Shift+a focus parent
+bindsym $super+Shift+z focus child
+bindsym $super+h       focus  left
+bindsym $super+j       focus  down
+bindsym $super+k       focus  up
+bindsym $super+l       focus  right
+bindsym $super+Shift+h move   left
+bindsym $super+Shift+j move   down
+bindsym $super+Shift+k move   up
+bindsym $super+Shift+l move   right
+bindsym $super+Ctrl+h  resize shrink width  10 px or 10 ppt
+bindsym $super+Ctrl+j  resize grow   height 10 px or 10 ppt
+bindsym $super+Ctrl+k  resize shrink height 10 px or 10 ppt
+bindsym $super+Ctrl+l  resize grow   width  10 px or 10 ppt
+
+bindsym $super+Shift+comma  workspace prev
+bindsym $super+Shift+period workspace next
+
+bindsym $super+f fullscreen toggle
+bindsym $super+q layout stacking
+bindsym $super+w layout tabbed
+bindsym $super+e layout toggle split
+bindsym $super+v split horizontal
+bindsym $super+minus split vertical
+# bindsym $super+z split toggle
+
+bindsym $super+d kill
+# button2 == middle button
+bindsym $super+button2 kill
+
+bindsym $super+semicolon scratchpad show
+bindsym $super+Shift+semicolon move scratchpad
+bindsym $super+Shift+b border toggle
+# }}}
+
+# BINDS: non-i3 {{{
+bindsym $alt+space exec --no-startup-id $HOME/.config/rofi/launchers/type-2/launcher.sh
+bindsym $super+Return exec alacritty
+
 bindsym $super+p exec passmenu
 bindsym $super+i exec rofi -modi emoji -show emoji
 bindsym $super+m exec xrandr --auto --output HDMI-A-0 --primary --output eDP --off
 bindsym $super+Shift+m exec xrandr --auto --output HDMI-A-0 --above eDP --output eDP --primary
 bindsym $super+n exec xrandr --auto
-bindsym $super+b exec --no-startup-id boomer
-bindsym $super+Shift+b border toggle
-# bindsym --release $super+c exec xcolor -s clipboard
+# bindsym $super+b exec --no-startup-id boomer
 bindsym $super+c exec copyq show
 bindsym $super+Ctrl+c exec conserve_ideapad_battery.sh
 bindsym $super+Shift+s exec --no-startup-id flameshot gui
 bindsym $super+Ctrl+Shift+s exec --no-startup-id flameshot gui --clipboard --accept-on-select
+bindsym $super+Shift+p exec --no-startup-id flameshot gui --pin --accept-on-select
 bindsym $super+bracketleft exec dunstctl history-pop
 bindsym $super+bracketright exec dunstctl close
 bindsym $super+z exec org-capture
-bindsym $super+semicolon scratchpad show
-bindsym $super+Shift+semicolon move scratchpad
 
+bindsym $super+Shift+f [class="firefox"] focus
+
+bindsym $super+Ctrl+m exec i3-input -F 'mark %s' -P 'Mark: '
+bindsym $super+slash exec i3-input -F '[con_mark="%s"] focus' -P 'Goto: '
+# }}}
+
+# MODES {{{
 # Mode for locking, exiting, restart, etc.
 set $system_mode System [l]ogout, [s]uspend, [h]ibernate, [r]eboot, [S]hutdown
 mode "$system_mode" {
@@ -178,8 +217,9 @@ set $open_mode open: [d]iscord, [b]rowser, [i]mages, [f]iles, [e]macs
 mode "$open_mode" {
     bindsym $super+d exec discord, mode "default"
     bindsym $super+b exec firefox, mode "default"
-    bindsym $super+i exec sxiv -rt $HOME/img, mode "default"
-    bindsym $super+f exec alacritty -e "nnn", mode "default"
+    bindsym $super+c exec google-chrome-stable, mode "default"
+    bindsym $super+i exec vimiv $HOME/img, mode "default"
+    bindsym $super+f exec alacritty -e nnn -A, mode "default"
     bindsym $super+p exec alacritty -e "ipython", mode "default"
     # bindsym $super+e exec emacsclient -c -a "emacs --daemon", mode "default"
     bindsym $super+e exec emacs $HOME/org/all.org, mode "default"
@@ -200,7 +240,9 @@ mode "$ui_mode" {
     bindsym Escape                                                      mode "default"
 }
 bindsym $super+u mode "$ui_mode"
+# }}}
 
+# COLORS {{{
 # class                 border  backgr. text    indicator child_border
 # client.focused          #15a3c7 #15a3c7 #ffffff #2e9ef4   #15a3c7
 # client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
@@ -208,7 +250,9 @@ bindsym $super+u mode "$ui_mode"
 # client.urgent           #2f343a #900000 #ffffff #900000   #900000
 # client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 # client.background       #ffffff
+# }}}
 
+# BAR {{{
 bar {
     position top
     status_command i3status -c $XDG_CONFIG_HOME/i3/$(hostname)_status
@@ -223,11 +267,6 @@ bar {
             # inactive_workspace #333333 #222222 #888888
             # urgent_workspace   #2f343a #900000 #ffffff
             # binding_mode       #2f343a #900000 #ffffff
-        }
+    }
 }
-
-# bar {
-#     position bottom
-#     workspace_command $XDG_CONFIG_HOME/i3/workspace.sh
-# }
-
+# }}}
