@@ -1,0 +1,8 @@
+[user]
+    name = Tudor Stoiu
+    email = tudor.stoiu@gmail.com
+    username = tstoiu17
+[init]
+    defaultBranch = main
+[core]
+    editor = nvim
