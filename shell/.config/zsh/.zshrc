@@ -89,25 +89,25 @@ ns() {
 # {{{ aliases
 alias rc="nvim $ZDOTDIR/.zshrc; exec zsh"
 alias e='exit'
-alias eza='eza --group-directories-first --sort=extension --icons=never'
-alias ls='eza'
+if command -v eza &> /dev/null; then
+    alias eza='eza --group-directories-first --sort=extension --icons=never'
+    alias ls='eza'
+    alias lt='eza --tree --level 1'
+    alias ltt='eza --tree --level 2'
+fi
 alias l='ls -l'
 alias cl='c;l'
 alias c='clear'
 alias ll='ls -laa'
-alias lt='eza --tree --level 1'
-alias ltt='eza --tree --level 2'
 alias cat='batcat'
 alias g='lazygit'
 alias v='nvim'
 alias vo="nvim '+Telescope oldfiles'"
 alias h='history'
-alias n='nnn'  # see $NNN_OPTS in .zshenv
+alias n='nnn'
 alias o="xdg-open"
 alias d="edit_dotfiles"
 alias t="tmuxp_load"
-alias p="pass"
-alias pc="pass -c"
 alias z='zathura --fork'
 alias x="xrandr"
 alias ..="cd .."
@@ -130,16 +130,10 @@ alias ts="tmux_sessionizer"
 alias td="tmux_dotfiles"
 alias clip2png="xclip -selection clipboard -t image/png -o >"
 alias pptx2pdf="soffice --headless --convert-to pdf"
-alias tree="tree -C"
-alias wm="$EDITOR ~/.config/i3/config"
 alias nf="neofetch"
-alias pacman="pacman --config $HOME/.config/pacman.conf"
-alias paru="paru --bottomup --config $HOME/.config/pacman.conf"
-alias i="paru -S"
 alias py="python"
 alias ipy="ipython"
 alias tldr="o https://tldr.inbrowser.app"
-alias nerd="o https://www.nerdfonts.com/cheat-sheet"
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}"
 alias ip="ip -color=auto"
 alias ex="exercism"

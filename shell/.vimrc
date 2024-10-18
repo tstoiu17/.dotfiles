@@ -19,6 +19,7 @@ set timeoutlen=500
 set shortmess+=cI
 
 set foldmethod=marker
+set modeline
 
 set expandtab
 set smartindent
