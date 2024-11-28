@@ -17,8 +17,9 @@ set termguicolors
 set updatetime=50
 set timeoutlen=500
 set shortmess+=cI
+set completeopt=menu,menuone,noselect
 
-set foldmethod=marker
+"set foldmethod=marker
 set modeline
 
 set expandtab
@@ -39,12 +40,12 @@ set winminwidth=5
 set noswapfile
 set noerrorbells
 set nobackup
-set undofile
 set laststatus=2
 "}}}
 "{{{ keybinds
 nnoremap \w :w<cr>
 nnoremap \q :qa<cr>
+nnoremap \x :x<cr>
 nnoremap \Q :qa!<cr>
 nnoremap \t :tabclose<cr>
 
@@ -52,12 +53,14 @@ vnoremap < <gv
 vnoremap > >gv
 
 noremap s <C-w>
+noremap S <C-w>
 noremap + <C-a>
 noremap - <C-x>
 noremap g+ g<C-a>
 noremap g- g<C-x>
 noremap <C-u> <C-u>zz
 noremap <C-d> <C-d>zz
+noremap * *N
 
 let g:mapleader=" "
 nnoremap <Leader>` <C-6>
