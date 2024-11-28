@@ -6,3 +6,12 @@
     defaultBranch = main
 [core]
     editor = nvim
+[alias]
+    s = status --short
+    lol = log --oneline --graph --all
+[difftool]
+    prompt = true
+[diff]
+    tool = nvimdiff
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
