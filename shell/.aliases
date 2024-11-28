@@ -1,0 +1,43 @@
+if command -v nvim &> /dev/null; then
+    alias v='nvim'
+    alias vo='nvim "+Telescope oldfiles"'
+    alias nv="nvim -c 'edit \$MYVIMRC' -c 'cd %:h'"
+elif command -v vim &> /dev/null; then
+    alias v='vim'
+fi
+alias hs='home-manager switch'
+alias he="nvim -c 'edit ~/.config/home-manager/home.nix' -c 'cd %:h'"
+
+if command -v bat &> /dev/null; then
+    alias cat='bat'
+fi
+if command -v eza &> /dev/null; then
+    alias eza='eza --group-directories-first --group --classify'
+    alias ls='eza'
+    alias lt='eza --tree --level 1'
+    alias ltt='eza --tree --level 2'
+    alias lttt='eza --tree'
+fi
+if command -v win32yank.exe &> /dev/null; then
+    alias clip="win32yank.exe -i"
+    alias clipo="win32yank.exe -o --lf"
+fi
+
+alias l='ls -l'
+alias ll='ls -laa'
+alias c='clear'
+alias cl='c;l'
+alias e='exit'
+alias ..='cd ..'
+alias -- -='cd -'
+
+alias cx='chmod +x'
+
+alias py='python'
+alias ipy='ipython'
+alias o='xdg-open'
+alias tldr='o https://tldr.inbrowser.app'
+alias g='lazygit'
+alias t='tmuxp_load'
+
+# vim:ft=zsh
