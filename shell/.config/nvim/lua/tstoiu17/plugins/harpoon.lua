@@ -22,19 +22,22 @@ return {
                 tabline = true,
                 tabline_prefix = "   ",
                 tabline_suffix = "   ",
-            }
+            },
         })
 
         local nmap = function(lhs, rhs, desc)
             vim.keymap.set("n", lhs, rhs, { desc = desc })
         end
-        nmap("<localleader>h", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, "harpoon menu")
-        nmap("<localleader>a", function() harpoon:list():append() end, "harpoon add file")
-        nmap("<leader>1", function() harpoon:list():select(1) end)
-        nmap("<leader>2", function() harpoon:list():select(2) end)
-        nmap("<leader>3", function() harpoon:list():select(3) end)
-        nmap("<leader>4", function() harpoon:list():select(4) end)
-        nmap("<leader>5", function() harpoon:list():select(5) end)
+        nmap("<localleader>h", function()
+            harpoon.ui:toggle_quick_menu(harpoon:list())
+        end, "harpoon menu")
+        nmap("<localleader>a", function()
+            harpoon:list():add()
+        end, "harpoon add file")
+        -- nmap("<leader>1", function() harpoon:list():select(1) end)
+        -- nmap("<leader>2", function() harpoon:list():select(2) end)
+        -- nmap("<leader>3", function() harpoon:list():select(3) end)
+        -- nmap("<leader>4", function() harpoon:list():select(4) end)
+        -- nmap("<leader>5", function() harpoon:list():select(5) end)
     end,
-
 }

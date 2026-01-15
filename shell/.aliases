@@ -1,7 +1,8 @@
 if command -v nvim &> /dev/null; then
     alias v='nvim'
     alias vo='nvim "+Telescope oldfiles"'
-    alias nv="nvim -c 'edit \$MYVIMRC' -c 'cd %:h'"
+    alias nv="nvim -c 'edit ~/.vimrc | vsplit \$MYVIMRC' -c 'cd %:h'"
+    alias vhelp='nvim --cmd "set ft=man"'
 elif command -v vim &> /dev/null; then
     alias v='vim'
 fi
@@ -11,8 +12,11 @@ alias he="nvim -c 'edit ~/.config/home-manager/home.nix' -c 'cd %:h'"
 if command -v bat &> /dev/null; then
     alias cat='bat'
 fi
+if command -v pnpm &> /dev/null; then
+    alias p='pnpm'
+fi
 if command -v eza &> /dev/null; then
-    alias eza='eza --group-directories-first --group --classify'
+    alias eza='eza --group-directories-first --group --classify --time-style="relative"'
     alias ls='eza'
     alias lt='eza --tree --level 1'
     alias ltt='eza --tree --level 2'
@@ -30,6 +34,7 @@ alias cl='c;l'
 alias e='exit'
 alias ..='cd ..'
 alias -- -='cd -'
+alias n='nnn -A'
 
 alias cx='chmod +x'
 

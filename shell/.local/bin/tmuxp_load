@@ -1,7 +1,38 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-selected=$(tmuxp ls | fzf)
+# - fuzzy pick a dir in ~/repos
+# - if never picked before:
+#   - create new workspace file: ~/.config/tmuxp/dirname.yaml
+# - tmuxp load ~/.config/tmuxp/dirname.yaml
+
+list_dirs_in_repos() {
+    find -L ~/repos -mindepth 1 -maxdepth 1 -type d -printf '%f\n'
+    tmuxp ls
+}
+
+fzf_with_tmuxp_preview() {
+    fzf \
+        --preview 'bat --style=snip --color=always ~/.config/tmuxp/{}.yaml' \
+        --layout=reverse \
+        --height=30 \
+        --select-1 \
+        --query "$1"
+}
+
+dirname=$(list_dirs_in_repos | sort -u | fzf_with_tmuxp_preview "${1-}")
+
+workspace_file="$HOME/.config/tmuxp/${dirname}.yaml"
+
+# create default workspace file if it doesn't exist
+if [ ! -f "$workspace_file" ]; then
+    {
+        echo "session_name: ${dirname//./_}"
+        echo "start_directory: \$HOME/repos/${dirname}"
+        echo "windows:"
+        echo "- window_name: zsh"
+    } >> "$workspace_file"
+fi
 
 # --yes means switch to session instead of appending windows to current session
-tmuxp load --yes "$selected"
+tmuxp load --yes "$workspace_file"

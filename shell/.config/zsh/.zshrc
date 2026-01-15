@@ -108,8 +108,6 @@ alias n='nnn'
 alias o="xdg-open"
 alias d="edit_dotfiles"
 alias t="tmuxp_load"
-alias z='zathura --fork'
-alias x="xrandr"
 alias ..="cd .."
 alias -- -="cd -"
 

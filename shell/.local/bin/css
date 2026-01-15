@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+mdn_bcd_url='https://unpkg.com/@mdn/browser-compat-data/data.json'
+mdn_bcd_data="$HOME/.cache/browser-compat-data.json"
+css_data="$HOME/.cache/browser-compat-data-css.json"
+
+if [ ! -f "$mdn_bcd_data" ]; then
+    echo "Cached data not found: $mdn_bcd_data"
+    echo "Fetching from $mdn_bcd_url"
+    curl --location "$mdn_bcd_url" --output "$mdn_bcd_data"
+fi
+
+if [ ! -f "$css_data" ]; then
+    jq --raw-output \
+        '.css.properties
+        | map_values(
+            select(
+                .__compat
+                | (.status
+                    | (.deprecated == false
+                      and .experimental == false
+                      and .standard_track == true)
+                  ) and has("mdn_url")
+            )
+          )' "$mdn_bcd_data" \
+        > "$css_data"
+fi
+
+jq --raw-output \
+    'keys | .[]' "$css_data" \
+| fzf --multi \
+| xargs -I {} \
+    jq --raw-output --arg target_prop "{}" \
+    '.[$target_prop].__compat.mdn_url' "$css_data" \
+| xargs -I {} xdg-open "{}"
